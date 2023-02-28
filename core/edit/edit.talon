@@ -30,7 +30,7 @@ go way up: edit.file_start()
 
 go bottom: edit.file_end()
 
-go top: edit.file_start()
+go (top | topper): edit.file_start()
 
 go page down: edit.page_down()
 
