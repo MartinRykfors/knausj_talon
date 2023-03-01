@@ -6,13 +6,13 @@ go word left: edit.word_left()
 
 go word right: edit.word_right()
 
-go left: edit.left()
+port: edit.left()
 
-go right: edit.right()
+starboard: edit.right()
 
-go up: edit.up()
+climb: edit.up()
 
-go down: edit.down()
+sink: edit.down()
 
 go line start: edit.line_start()
 
@@ -28,9 +28,9 @@ go way down: edit.file_end()
 
 go way up: edit.file_start()
 
-go bottom: edit.file_end()
+(go bottom | land): edit.file_end()
 
-go (top | topper): edit.file_start()
+(go topper | cruise): edit.file_start()
 
 go page down: edit.page_down()
 
