@@ -48,5 +48,8 @@ class Actions:
     def split_last():
         """Goes to last split"""
 
+    def split_cycle():
+        """Goes to next split, wraps around to first split"""
+
     def split_number(index: int):
         """Navigates to a the specified split"""

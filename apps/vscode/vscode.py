@@ -185,6 +185,9 @@ class UserActions:
     def split_next():
         actions.user.vscode_and_wait("workbench.action.focusRightGroup")
 
+    def split_cycle():
+        actions.user.vscode_and_wait("workbench.action.navigateEditorGroups")
+
     def split_window_down():
         actions.user.vscode("workbench.action.moveEditorToBelowGroup")
 
