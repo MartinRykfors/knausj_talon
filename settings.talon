@@ -37,7 +37,7 @@ settings():
     user.grids_put_one_bottom_left = 1
 
     # The number of lines of command history to display by default
-    user.command_history_display = 10
+    user.command_history_display = 20
 
     # The number of lines of command history to keep in total;
     # "command history more" to display all of them, "command history less" to restore
@@ -56,5 +56,9 @@ settings():
     # -width windows are resized to stay full-height/width.
     #user.window_snap_screen = "size aware"
 
+    user.cursorless_settings_directory = "knausj_talon/cursorless-settings"
+
 # Uncomment this to enable the curse yes/curse no commands (show hide mouse cursor). See issue #688.
 # tag(): user.mouse_cursor_commands_enable
+
+tag(): user.cursorless_experimental_snippets
