@@ -13,7 +13,7 @@ cut that: edit.cut()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
-file save all: edit.save_all()
+file save (all | everything): edit.save_all()
 (pad | padding): user.insert_between(" ", " ")
 (pad | padding) <user.symbol_key>+:
     insert(" ")
