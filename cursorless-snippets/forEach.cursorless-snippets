@@ -1,0 +1,26 @@
+{
+  "forEach": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "for $var in $iterable:",
+          "\t$body"
+        ]
+      }
+    ],
+    "description": "For-each loop",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}
