@@ -137,7 +137,7 @@ formatters_dict = {
 # This is the mapping from spoken phrases to formatters
 formatters_words = {
     "all cap": formatters_dict["ALL_CAPS"],
-    "all down": formatters_dict["ALL_LOWERCASE"],
+    "no cap": formatters_dict["ALL_LOWERCASE"],
     "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
     "dotted": formatters_dict["DOT_SEPARATED"],
     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
@@ -295,6 +295,5 @@ def unformat_text(text: str) -> str:
 ctx.lists["self.formatters"] = formatters_words.keys()
 ctx.lists["self.prose_formatter"] = {
     "say": "NOOP",
-    "speak": "NOOP",
     "sentence": "CAPITALIZE_FIRST_WORD",
 }
