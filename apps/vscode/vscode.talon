@@ -61,6 +61,7 @@ fullscreen switch: user.vscode("workbench.action.toggleFullScreen")
 theme switch: user.vscode("workbench.action.selectTheme")
 wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
+light switch: user.vscode("workbench.action.toggleLightDarkThemes")
 
 # File Commands
 file hunt [<user.text>]:
