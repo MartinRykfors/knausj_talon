@@ -9,7 +9,7 @@ arg, argumentOrParameter
 attribute, attribute
 block, paragraph
 branch, branch
-call, functionCall
+holler, functionCall
 callee, functionCallee
 cell, notebookCell
 chapter, chapter
