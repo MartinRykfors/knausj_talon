@@ -3,3 +3,5 @@ if, ifStatement
 if else, ifElseStatement
 try, tryCatchStatement
 for each, forEach
+comprehension, listComprehension
+filter comprehension, listFilterComprehension

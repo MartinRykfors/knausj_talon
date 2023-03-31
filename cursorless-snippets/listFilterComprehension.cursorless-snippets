@@ -1,0 +1,16 @@
+{
+  "listFilterComprehension": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "[$transformation for $var in $iterable if $predicate]"
+        ]
+      }
+    ]
+  }
+}

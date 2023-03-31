@@ -1,0 +1,16 @@
+{
+  "listComprehension": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "[$transformation for $var in $iterable]"
+        ]
+      }
+    ]
+  }
+}
