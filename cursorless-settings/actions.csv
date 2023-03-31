@@ -2,7 +2,7 @@ Spoken form, Cursorless identifier
 bottom, scrollToBottom
 break point, toggleLineBreakpoint
 bring, replaceWithTarget
-call, callAsFunction
+place call, callAsFunction
 excise, cutToClipboard
 center, scrollToCenter
 change, clearAndSetSelection
