@@ -23,3 +23,5 @@ slap: edit.line_insert_down()
 slapper:
     edit.line_insert_down()
     edit.line_insert_down()
+
+slow mode: mode.enable("user.slow")
