@@ -279,5 +279,9 @@ cell run: user.vscode("notebook.cell.execute")
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
 
+# numbered bookmarks extension
+go book <number>: user.vscode("numberedBookmarks.jumpToBookmark{number}")
+set book <number>: user.vscode("numberedBookmarks.toggleBookmark{number}")
+
 # custom
 cursor less switch: user.vscode("cursorless.toggleDecorations")
