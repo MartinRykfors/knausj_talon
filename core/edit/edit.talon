@@ -8,7 +8,7 @@ go word right: edit.word_right()
 
 port: edit.left()
 
-starboard: edit.right()
+(star | starboard): edit.right()
 
 climb: edit.up()
 
