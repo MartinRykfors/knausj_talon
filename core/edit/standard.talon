@@ -14,8 +14,8 @@ redo that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
 file save (all | everything): edit.save_all()
-(pad | padding): user.insert_between(" ", " ")
-(pad | padding) <user.symbol_key>+:
+padding: user.insert_between(" ", " ")
+padding <user.symbol_key>+:
     insert(" ")
     user.insert_many(symbol_key_list)
     insert(" ")
@@ -25,3 +25,8 @@ slapper:
     edit.line_insert_down()
 
 slow mode: mode.enable("user.slow")
+
+terminal repeat:
+    user.switcher_focus("Terminal")
+    sleep(300ms)
+    user.terminal_run_last()
