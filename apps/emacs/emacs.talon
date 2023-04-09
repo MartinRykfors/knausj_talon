@@ -6,7 +6,7 @@ tag(): user.line_commands
 
 # ----- GENERAL ----- #
 #suplex: key(ctrl-x)
-cancel: user.emacs("keyboard-quit")
+abort: user.emacs("keyboard-quit")
 exchange: user.emacs("exchange-point-and-mark")
 execute: user.emacs_meta_x()
 execute {user.emacs_command}$: user.emacs(emacs_command)
@@ -302,6 +302,7 @@ project switch project: user.emacs("project-switch-project")
 
 # ----- VC/GIT SUPPORT ----- #
 vc (annotate | blame): user.emacs("vc-annotate")
+maggot: user.emacs("magit-status")
 
 # ----- MAJOR & MINOR MODES ----- #
 # python-mode #

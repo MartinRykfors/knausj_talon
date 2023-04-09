@@ -67,6 +67,8 @@ settings():
 
     user.cursorless_settings_directory = "knausj_talon/cursorless-settings"
 
+    user.emacs_meta = "alt"
+
 # Uncomment this to enable the curse yes/curse no commands (show hide mouse cursor). See issue #688.
 # tag(): user.mouse_cursor_commands_enable
 
