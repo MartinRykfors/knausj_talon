@@ -239,7 +239,7 @@ alternate_keys = {
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
-    "clap": "enter",
+    "crunch": "enter",
     "leap": "space",
 }
 # mac apparently doesn't have the menu key.
