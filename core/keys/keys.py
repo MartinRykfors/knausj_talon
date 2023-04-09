@@ -212,10 +212,10 @@ ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
 ctx.lists["self.number_key"] = {name: str(i) for i, name in enumerate(digits)}
 ctx.lists["self.arrow_key"] = {
-    "down": "down",
-    "left": "left",
-    "right": "right",
-    "up": "up",
+    "sink": "down",
+    "port": "left",
+    "star": "right",
+    "climb": "up",
 }
 
 simple_keys = [
