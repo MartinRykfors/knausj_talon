@@ -20,3 +20,8 @@ color:
     sleep(50ms)
 
 <user.number_string>: "{number_string}"
+
+include <user.arrow_keys>:
+    key("shift:down")
+    user.move_cursor(arrow_keys)
+    key("shift:up")
