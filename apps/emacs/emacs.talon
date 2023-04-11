@@ -351,3 +351,7 @@ outline demote: user.emacs("outline-demote")
 outline move [subtree] down: user.emacs("outline-move-subtree-down")
 outline move [subtree] up: user.emacs("outline-move-subtree-up")
 outline mark [subtree]: user.emacs("outline-mark-subtree")
+
+# ag #
+silver: user.emacs("ag")
+silver rex: user.emacs("ag-regexp")
