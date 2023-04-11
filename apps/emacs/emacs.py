@@ -119,6 +119,9 @@ class UserActions:
     def split_next():
         actions.user.emacs("other-window")
 
+    def split_cycle():
+        actions.user.emacs("other-window")
+
     def split_last():
         actions.user.emacs("other-window", -1)
 
