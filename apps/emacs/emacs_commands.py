@@ -101,4 +101,4 @@ class UserActions:
         else:
             actions.user.emacs_meta_x()
             actions.insert(command.short or command.name)
-            actions.key("enter")
+            actions.key("alt-enter")
