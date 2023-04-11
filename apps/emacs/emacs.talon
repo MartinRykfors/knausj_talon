@@ -1,4 +1,4 @@
-app: emacs
+app: /emacs/
 -
 tag(): user.tabs
 tag(): user.splits
