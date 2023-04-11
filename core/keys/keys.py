@@ -236,7 +236,6 @@ alternate_keys = {
     "page up": "pageup",
     "page down": "pagedown",
     "crunch": "enter",
-    "leap": "space",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
