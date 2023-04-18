@@ -32,8 +32,8 @@ save some buffers: user.emacs("save-some-buffers")
 sort lines: user.emacs("sort-lines")
 sort words: user.emacs("sort-words")
 
-go directory: user.emacs("dired-jump")
-other go directory: user.emacs("dired-jump-other-window")
+(dire start | go directory): user.emacs("dired-jump")
+other (dire start | go directory): user.emacs("dired-jump-other-window")
 
 [toggle] debug on error: user.emacs("toggle-debug-on-error")
 [toggle] input method: user.emacs("toggle-input-method")
