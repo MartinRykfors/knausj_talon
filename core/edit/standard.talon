@@ -25,6 +25,7 @@ slapper:
     edit.line_insert_down()
 
 slow mode: mode.enable("user.slow")
+fast mode: skip()
 
 terminal repeat:
     user.switcher_focus("Terminal")
