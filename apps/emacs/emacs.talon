@@ -5,7 +5,7 @@ tag(): user.splits
 tag(): user.line_commands
 
 # ----- GENERAL ----- #
-#suplex: key(ctrl-x)
+complex: key(ctrl-x)
 abort: user.emacs("keyboard-quit")
 exchange: user.emacs("exchange-point-and-mark")
 execute: user.emacs_meta_x()
