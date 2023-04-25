@@ -132,6 +132,7 @@ formatters_dict = {
         if i == 0 or word not in words_to_keep_lowercase
         else word,
     ),
+    "SPACE_AFTER": (SEP, lambda i, word, last: word if not last else f"{word} ")
 }
 
 # This is the mapping from spoken phrases to formatters
@@ -151,6 +152,7 @@ formatters_words = {
     "snake": formatters_dict["SNAKE_CASE"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
+    "storm": formatters_dict["SPACE_AFTER"],
 }
 
 all_formatters = {}
