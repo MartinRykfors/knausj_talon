@@ -357,8 +357,4 @@ silver: user.emacs("ag")
 silver rex: user.emacs("ag-regexp")
 
 # key-leap #
-# hard code key presses here to avoid mini buffer flashing
-# leap: user.emacs("key-leap-start-matching")
-leap:
-    key(ctrl-c)
-    key("#")
+leap: user.emacs("key-leap-start-matching")

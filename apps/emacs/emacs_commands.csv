@@ -73,6 +73,7 @@ isearch-forward-regexp, meta-ctrl-s
 isearch-forward-symbol, meta-s _
 isearch-forward-word, meta-s w
 jump-to-register, ctrl-x r j
+key-leap-start-matching, ctrl-c #
 keyboard-quit, ctrl-g
 kill-buffer, ctrl-x k
 kill-line, ctrl-k
