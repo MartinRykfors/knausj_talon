@@ -291,6 +291,6 @@ hope this works:
     user.switcher_focus("Terminal")
     sleep(600ms)
     user.terminal_run_last()
-    user.switcher_focus("Code")
+    #user.switcher_focus("Code")
 
 find case switch: key(alt-c)
