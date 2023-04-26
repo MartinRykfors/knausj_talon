@@ -16,12 +16,12 @@ class Actions:
 
     def terminal_list_directories():
         """Lists directories"""
-        actions.insert("ls")
+        actions.insert("ll")
         actions.key("enter")
 
     def terminal_list_all_directories():
         """Lists all directories including hidden"""
-        actions.insert("ls -a")
+        actions.insert("ll -a")
         actions.key("enter")
 
     def terminal_change_directory(path: str):
@@ -52,5 +52,3 @@ class Actions:
     def terminal_kill_all():
         """kills the running command"""
         actions.key("ctrl-c")
-        actions.insert("y")
-        actions.key("enter")
