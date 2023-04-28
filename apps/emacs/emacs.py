@@ -10,8 +10,9 @@ setting_meta = mod.setting(
     desc="""What to use for the meta key in emacs. Defaults to 'esc', since that should work everywhere. Other options are 'alt' and 'cmd'.""",
 )
 
-mod.apps.emacs = "app.name: /Emacs/"
-mod.apps.emacs = "app.name: /emacs/"
+mod.apps.emacs = "app.name: Emacs"
+mod.apps.emacs = "app.name: emacs"
+mod.apps.emacs = "app.name: /^GNU Emacs/"
 mod.apps.emacs = """
 os: mac
 app.bundle: org.gnu.Emacs
