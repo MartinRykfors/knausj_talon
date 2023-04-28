@@ -36,7 +36,7 @@ insert code: insert("```")
 (slack | lack) (quotes | quotation): key(ctrl-shift-9)
 bold: key(ctrl-b)
 (italic | italicize): key(ctrl-i)
-(strike | strikethrough): key(ctrl-shift-x)
+strikethrough: key(ctrl-shift-x)
 (slack | lack) snippet: key(ctrl-shift-enter)
 # Calls
 ([toggle] mute | unmute): key(m)
@@ -47,20 +47,3 @@ bold: key(ctrl-b)
 emote <user.text>: "{text}"
 toggle left sidebar: key(ctrl-shift-d)
 toggle right sidebar: key(ctrl-.)
-
-# DEPRECATED
-(move | next) focus:
-    app.notify("please use the voice command 'focus next' instead of 'next focus'")
-    key(ctrl-`)
-[next] (section | zone):
-    app.notify("please use the voice command 'section next' instead of 'next section'")
-    key(f6)
-(previous | last) (section | zone):
-    app.notify("please use the voice command 'section last' instead of 'last section'")
-    key(shift-f6)
-[next] (element | bit):
-    app.notify("please use the voice command 'element next' instead of 'next element'")
-    key(tab)
-(previous | last) (element | bit):
-    app.notify("please use the voice command 'element last' instead of 'last element'")
-    key(shift-tab)
