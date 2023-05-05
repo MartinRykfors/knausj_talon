@@ -7,6 +7,7 @@ chmod -R,change mode recurse
 chmod,change mode
 chown -R,change owner recurse
 chown,change owner
+cp,copy
 curl
 cut
 df -h,disk free human
