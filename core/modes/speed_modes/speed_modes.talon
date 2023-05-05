@@ -9,3 +9,5 @@ slow mode:
 default mode:
     mode.disable("user.slow_mode")
     mode.disable("user.fast_mode")
+
+speed check: user.speed_check()
