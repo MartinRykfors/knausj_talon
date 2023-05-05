@@ -196,7 +196,7 @@ symbol_key_words = {
     "astro": "*",
     "hash": "#",
     "percent": "%",
-    "caret": "^",
+    "carriage": "^",
     "amper": "&",
     "pipe": "|",
     "dub quote": '"',
