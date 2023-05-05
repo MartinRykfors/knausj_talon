@@ -221,7 +221,7 @@ ctx.lists["self.arrow_key"] = {
 simple_keys = [
     # "end",
     # "enter",
-    "escape",
+    # "escape",
     # "home",
     "insert",
     "pagedown",
