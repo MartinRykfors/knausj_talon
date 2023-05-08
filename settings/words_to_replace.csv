@@ -41,7 +41,6 @@ python,piston
 python,piton
 python,parson
 yes,affirm
-svn,subversion
 queue,cue
 queue,cu
 coop,coup
