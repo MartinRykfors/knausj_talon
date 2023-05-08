@@ -1,6 +1,7 @@
 tag: terminal
 -
 # tags should be activated for each specific terminal in the respective talon file
+tag(): user.affirmative
 
 lisa: user.terminal_list_directories()
 lisa all: user.terminal_list_all_directories()
