@@ -18,7 +18,6 @@ ctx.lists["self.svn_command"] = {
     "delete": "delete",
     "diff": "diff",
     "export": "export",
-    "help": "help",
     "import": "import",
     "info": "info",
     "list": "list",
