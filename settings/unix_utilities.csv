@@ -46,6 +46,7 @@ sort
 ssh,S S H
 stat
 sudo,pseudo
+systemctl,system control
 tail -f,tail follow
 tail
 tee -a,tea append
