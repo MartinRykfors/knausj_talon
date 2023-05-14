@@ -2,7 +2,7 @@ Spoken form, Cursorless identifier
 floor, scrollToBottom
 break point, toggleLineBreakpoint
 bring, replaceWithTarget
-call, callAsFunction
+place call, callAsFunction
 excise, cutToClipboard
 center, scrollToCenter
 change, clearAndSetSelection
@@ -28,7 +28,7 @@ indent, indentLine
 inspect, showDebugHover
 move, moveToTarget
 paste, pasteFromClipboard
-phones, nextHomophone
+telephone, nextHomophone
 post, setSelectionAfter
 pour, editNewLineAfter
 pre, setSelectionBefore
