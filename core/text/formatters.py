@@ -133,7 +133,9 @@ formatters_dict = {
         else word,
     ),
     "SPACE_AFTER": (SEP, lambda i, word, last: word if not last else f"{word} "),
-    "GRAVE_QUOTED_STRING": (SEP, surround('`'))
+    "GRAVE_QUOTED_STRING": (SEP, surround('`')),
+    "LEADING_DASH_SPACE_AFTER": (SEP, lambda i, w, last: f"-{w} " if i == 0 and last else f"-{w}" if i == 0 else f"{w} " if last else w),
+    "LEADING_DASHES_SPACE_AFTER": (SEP, lambda i, w, last: f"--{w} " if i == 0 and last else f"--{w}" if i == 0 else f"{w} " if last else w)
 }
 
 # This is the mapping from spoken phrases to formatters
@@ -156,6 +158,8 @@ formatters_words = {
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
     "storm": formatters_dict["SPACE_AFTER"],
     "graveyard": formatters_dict["GRAVE_QUOTED_STRING"],
+    "spike": formatters_dict["LEADING_DASH_SPACE_AFTER"],
+    "nail": formatters_dict["LEADING_DASHES_SPACE_AFTER"],
 }
 
 all_formatters = {}
