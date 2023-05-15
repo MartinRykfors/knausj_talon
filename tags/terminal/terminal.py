@@ -28,3 +28,6 @@ class Actions:
 
     def terminal_kill_all():
         """kills the running command"""
+
+    def terminal_history():
+        """Shows the command history"""

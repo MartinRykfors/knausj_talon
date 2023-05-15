@@ -52,3 +52,8 @@ class Actions:
     def terminal_kill_all():
         """kills the running command"""
         actions.key("ctrl-c")
+
+    def terminal_history():
+        """Shows the command history"""
+        actions.insert("history")
+        actions.key("enter")
