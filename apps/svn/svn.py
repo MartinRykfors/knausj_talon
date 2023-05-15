@@ -37,6 +37,7 @@ ctx.lists["self.svn_command"] = {
     "resolve": "resolve",
     "resolved": "resolved",
     "revert": "revert",
+    "revert everything": "revert -R .",
     "status": "status",
     "switch": "switch",
     "unlock": "unlock",
@@ -44,8 +45,3 @@ ctx.lists["self.svn_command"] = {
     "update": "update",
     "upgrade": "upgrade",
 }
-
-@mod.capture(rule="{user.svn_command}+")
-def svn_commands(m) -> str:
-    """A non-empty sequence of svn command arguments."""
-    return " ".join(m.svn_command_list)
