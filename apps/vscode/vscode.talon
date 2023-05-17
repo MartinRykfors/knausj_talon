@@ -294,3 +294,5 @@ hope this works:
     user.switcher_focus("Code")
 
 find case switch: key(alt-c)
+
+cobra run: user.vscode("python.execInTerminal")
