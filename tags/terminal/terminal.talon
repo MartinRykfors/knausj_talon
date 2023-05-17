@@ -11,3 +11,5 @@ clear screen: user.terminal_clear_screen()
 run last: user.terminal_run_last()
 abort: user.terminal_kill_all()
 history: user.terminal_history()
+bang <user.number_string>:
+    insert("!{number_string}")
