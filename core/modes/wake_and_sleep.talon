@@ -13,5 +13,5 @@ mode: all
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
-^(talon sleep | drowse) [<phrase>]$: speech.disable()
+^(talon sleep | drowse | snore) [<phrase>]$: speech.disable()
 ^(talon wake)+$: speech.enable()
