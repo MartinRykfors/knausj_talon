@@ -1,4 +1,4 @@
 mode: user.medium_mode
 -
 settings():
-    speech.timeout = 0.45
+    speech.timeout = 0.4
