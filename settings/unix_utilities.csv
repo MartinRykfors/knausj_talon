@@ -1,4 +1,5 @@
 command,spoken
+apt,apt
 awk,ark
 base64 -d,base sixty four decode
 base64,base sixty four
