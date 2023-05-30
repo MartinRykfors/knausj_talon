@@ -2,7 +2,7 @@
 os: linux
 tag: user.i3wm
 -
-try work <number_small>: user.i3wm_switch_to_workspace(number_small)
+try [work] <number_small>: user.i3wm_switch_to_workspace(number_small)
 try flip: user.i3wm_switch_to_workspace("back_and_forth")
 try work star: user.i3wm_switch_to_workspace("next")
 try work port: user.i3wm_switch_to_workspace("prev")
@@ -48,6 +48,10 @@ try move port: user.i3wm_move("left")
 try move star: user.i3wm_move("right")
 try move climb: user.i3wm_move("up")
 try move sink: user.i3wm_move("down")
+
+try surf [work] <number_small>:
+    user.i3wm_move_to_workspace(number_small)
+    user.i3wm_switch_to_workspace(number_small)
 
 try horizontal: user.i3wm_split("h")
 try vertical: user.i3wm_split("v")
