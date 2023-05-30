@@ -3,14 +3,14 @@ apt,apt
 awk,ark
 base64 -d,base sixty four decode
 base64,base sixty four
-cat,concat
+cat
 chmod -R,change mode recurse
 chmod,change mode
 chown -R,change owner recurse
 chown,change owner
 cp,copy
 curl
-cut
+cut,cutter
 df -h,disk free human
 df,disk free
 dig
