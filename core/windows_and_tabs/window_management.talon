@@ -3,6 +3,12 @@ window next: app.window_next()
 window last: app.window_previous()
 window close: app.window_close()
 focus <user.running_applications>: user.switcher_focus(running_applications)
+
+terminal: user.switcher_focus("terminal")
+studio: user.switcher_focus("code")
+firefox: user.switcher_focus("firefox")
+emacs: user.switcher_focus("emacs")
+
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
 focus$: user.switcher_menu()
 running list: user.switcher_toggle_running()
