@@ -6,3 +6,4 @@ if else, ifElseStatement.consequence
 link, link.text
 try, tryCatchStatement.body
 for each, forEach.body
+with, with.body

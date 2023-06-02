@@ -1,0 +1,26 @@
+{
+  "with": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "with $var:",
+          "\t$body"
+        ]
+      }
+    ],
+    "description": "Python with statement",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}
