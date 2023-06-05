@@ -49,7 +49,7 @@ sort -u,sort unique
 sort
 ssh,S S H
 stat
-sudo,pseudo
+sudo,super
 systemctl,system control
 systemctl --user,system user
 tail -f,tail follow
