@@ -1,0 +1,5 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = gdrive://1vqICRJKS-JgxuxN5y9S19O4-3kdNBnZA
+    gdrive_acknowledge_abuse = true
