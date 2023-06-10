@@ -1,0 +1,26 @@
+{
+  "elseIfStatement": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "elif $condition:",
+          "\t$consequence"
+        ]
+      }
+    ],
+    "description": "Else if statement",
+    "variables": {
+      "consequence": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "branch"
+    ]
+  }
+}

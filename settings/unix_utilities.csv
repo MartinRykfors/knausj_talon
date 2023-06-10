@@ -25,6 +25,8 @@ head
 htop,harp top
 id -u,I D user
 id,I D
+journalctl,journal control
+journalctl --user ,journal user
 less
 ln -s,link soft
 ln,link
@@ -47,8 +49,9 @@ sort -u,sort unique
 sort
 ssh,S S H
 stat
-sudo,pseudo
+sudo,super
 systemctl,system control
+systemctl --user,system user
 tail -f,tail follow
 tail
 tee -a,tea append

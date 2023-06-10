@@ -239,6 +239,7 @@ alternate_keys = {
     "strike": "escape",
     "ram": "end",
     "whip": "home",
+    "void": "space",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
