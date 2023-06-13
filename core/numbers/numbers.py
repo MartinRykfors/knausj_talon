@@ -5,19 +5,23 @@ from talon import Context, Module
 mod = Module()
 ctx = Context()
 
-digit_list = "zero one two three four five six seven eight nine".split()
+digit_list = "zero unit two three four five six seven eight nine".split()
+standard_digit_list = "zero one two three four five six seven eight nine".split()
 teens = "ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
 tens = "twenty thirty forty fifty sixty seventy eighty ninety".split()
 scales = "hundred thousand million billion trillion quadrillion quintillion sextillion septillion octillion nonillion decillion".split()
 
 digits_map = {n: i for i, n in enumerate(digit_list)}
-digits_map["oh"] = 0
+# digits_map["oh"] = 0
+standard_digits_map = {n: i for i, n in enumerate(standard_digit_list)}
+# standard_digits_map["oh"] = 0
 teens_map = {n: i + 10 for i, n in enumerate(teens)}
 tens_map = {n: 10 * (i + 2) for i, n in enumerate(tens)}
 scales_map = {n: 10 ** (3 * (i + 1)) for i, n in enumerate(scales[1:])}
 scales_map["hundred"] = 100
 
-numbers_map = digits_map.copy()
+numbers_map = standard_digits_map.copy()
+numbers_map.update(digits_map)
 numbers_map.update(teens_map)
 numbers_map.update(tens_map)
 numbers_map.update(scales_map)
@@ -47,7 +51,7 @@ def scan_small_numbers(l: list[str]) -> Iterator[Union[str, int]]:
     while l:
         n = l.pop()
         # fuse tens onto digits, eg. "twenty", "one" -> 21
-        if n in tens_map and l and digits_map.get(l[-1], 0) != 0:
+        if n in tens_map and l and standard_digits_map.get(l[-1], 0) != 0:
             d = l.pop()
             yield numbers_map[n] + numbers_map[d]
         # turn small number terms into corresponding numbers
@@ -173,7 +177,7 @@ number_word_leading = f"({'|'.join(leading_words)})"
 number_small_list = [*digit_list, *teens]
 for ten in tens:
     number_small_list.append(ten)
-    number_small_list.extend(f"{ten} {digit}" for digit in digit_list[1:])
+    number_small_list.extend(f"{ten} {digit}" for digit in standard_digit_list[1:])
 number_small_map = {n: i for i, n in enumerate(number_small_list)}
 
 mod.list("number_small", desc="List of small numbers")
