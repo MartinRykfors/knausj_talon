@@ -1,0 +1,33 @@
+{
+  "stateHandler": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "def $name(self, e):",
+          "\tif e.sig == qp.ENTRY_SIG:",
+          "\t\tself.logger.info(\"entry/\")",
+          "\t\treturn 0",
+          "",
+          "\treturn self.__class__.$parent"
+        ],
+        "variables": {
+          "name": {
+            "formatter": "snakeCase"
+          }
+        }
+      }
+    ],
+    "description": "State handler declaration",
+    "variables": {},
+    "insertionScopeTypes": [
+      "namedFunction",
+      "statement",
+      "line"
+    ]
+  }
+}
