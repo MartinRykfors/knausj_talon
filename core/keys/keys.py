@@ -235,7 +235,7 @@ alternate_keys = {
     "delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
-    "crunch": "enter",
+    "punch": "enter",
     "strike": "escape",
     "ram": "end",
     "whip": "home",
