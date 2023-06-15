@@ -7,10 +7,6 @@ try flip: user.i3wm_switch_to_workspace("back_and_forth")
 try work star: user.i3wm_switch_to_workspace("next")
 try work port: user.i3wm_switch_to_workspace("prev")
 
-try port: user.i3wm_focus("left")
-try star: user.i3wm_focus("right")
-try climb: user.i3wm_focus("up")
-try sink: user.i3wm_focus("down")
 try kill kill: app.window_close()
 try stacking: user.i3wm_layout("stacking")
 try default: user.i3wm_layout()
@@ -44,17 +40,10 @@ try shell: user.i3wm_shell()
 try move [work] <number_small>:
     user.i3wm_move_to_workspace(number_small)
 try move flip: user.i3wm_move_to_workspace("back_and_forth")
-try move port: user.i3wm_move("left")
-try move star: user.i3wm_move("right")
-try move climb: user.i3wm_move("up")
-try move sink: user.i3wm_move("down")
 
 try surf [work] <number_small>:
     user.i3wm_move_to_workspace(number_small)
     user.i3wm_switch_to_workspace(number_small)
-
-try horizontal: user.i3wm_split("h")
-try vertical: user.i3wm_split("v")
 
 try make scratch: user.i3wm_move("scratchpad")
 try scratch: user.i3wm_show_scratchpad()
@@ -74,3 +63,9 @@ try launch <user.text>:
     sleep(100ms)
     insert("{text}")
 try lock screen: user.i3wm_lock()
+
+try {user.workspace_action}+ $:
+    user.i3wm_workspace_actions(workspace_action_list)
+
+try {user.workspace_action}+ then:
+    user.i3wm_workspace_actions(workspace_action_list)
