@@ -295,4 +295,4 @@ hope this works:
 
 find case switch: key(alt-c)
 
-cobra run: user.vscode("python.execInTerminal")
+execute file: user.vscode("python.execInTerminal")
