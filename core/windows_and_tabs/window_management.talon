@@ -8,6 +8,7 @@ terminal: user.switcher_focus("terminal")
 studio: user.switcher_focus("code")
 firefox: user.switcher_focus("firefox")
 emacs: user.switcher_focus("emacs")
+alacrity: user.switcher_focus("alacritty")
 
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
 focus$: user.switcher_menu()
