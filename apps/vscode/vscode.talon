@@ -285,7 +285,7 @@ set book <number>: user.vscode("numberedBookmarks.toggleBookmark{number}")
 
 # custom
 cursor less switch: user.vscode("cursorless.toggleDecorations")
-hope this works:
+(hope this works | run last terminal):
     edit.save_all()
     sleep(800ms)
     user.switcher_focus("Terminal")
