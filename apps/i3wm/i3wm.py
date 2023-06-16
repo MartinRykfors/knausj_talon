@@ -1,4 +1,5 @@
 import subprocess
+import itertools
 from typing import Optional, Union
 
 from talon import Context, Module, actions, settings, app
@@ -19,10 +20,30 @@ mod.setting(
     default="super",
     desc="The default key to use for i3wm commands",
 )
+mod.list("workspace_action", desc="Workspace action")
 
 ctx.matches = """
 tag: user.i3wm
 """
+
+workspace_actions = {
+    "port": [["focus", "left"]],
+    "star": [["focus", "right"]],
+    "climb": [["focus", "up"]],
+    "sink": [["focus", "down"]],
+    "move port": [["move", "left"]],
+    "move star": [["move", "right"]],
+    "move climb": [["move", "up"]],
+    "move sink": [["move", "down"]],
+    "vertical": [["split", "v"]],
+    "horizontal": [["split", "h"]],
+    "pull port": [["focus", "left"], ["move", "right"]],
+    "pull star": [["focus", "right"], ["move", "left"]],
+    "pull climb": [["focus", "up"], ["move", "down"]],
+    "pull sink": [["focus", "down"], ["move", "up"]],
+}
+
+ctx.lists["self.workspace_action"] = {k: k for k in workspace_actions.keys()}
 
 
 @ctx.action_class("app")
@@ -33,6 +54,15 @@ class AppActions:
 
 @mod.action_class
 class Actions:
+    def i3wm_workspace_actions(_actions: list[str]):
+        """Perform multiple actions that modify a single workspace"""
+        print(_actions)
+        for _action in _actions:
+            for action_list in workspace_actions[_action]:
+                args = ["i3-msg"] + action_list
+                subprocess.check_call(args)
+                actions.sleep("100ms")
+
     def i3wm_mode(name: str):
         """Switch i3 mode"""
         subprocess.check_call(("i3-msg", "mode", name))
@@ -114,19 +144,27 @@ class Actions:
 
     def i3wm_widen():
         """Widen the focused container"""
-        subprocess.check_call(("i3-msg", "resize", "grow", "width", "10", "px", "or", "10", "ppt"))
+        subprocess.check_call(
+            ("i3-msg", "resize", "grow", "width", "10", "px", "or", "10", "ppt")
+        )
 
     def i3wm_slim():
         """Slim the focused container"""
-        subprocess.check_call(("i3-msg", "resize", "shrink", "width", "10", "px", "or", "10", "ppt"))
+        subprocess.check_call(
+            ("i3-msg", "resize", "shrink", "width", "10", "px", "or", "10", "ppt")
+        )
 
     def i3wm_lengthen():
         """Lengthen the focused container"""
-        subprocess.check_call(("i3-msg", "resize", "grow", "height", "10", "px", "or", "10", "ppt"))
+        subprocess.check_call(
+            ("i3-msg", "resize", "grow", "height", "10", "px", "or", "10", "ppt")
+        )
 
     def i3wm_shorten():
         """Shorten the focused container"""
-        subprocess.check_call(("i3-msg", "resize", "shrink", "height", "10", "px", "or", "10", "ppt"))
+        subprocess.check_call(
+            ("i3-msg", "resize", "shrink", "height", "10", "px", "or", "10", "ppt")
+        )
 
     def i3wm_lock():
         """Trigger the lock screen"""
