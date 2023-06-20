@@ -4,19 +4,19 @@ win.title: /Sven's Web App/
 -
 
 actual:
-    key(z)
+    key(;)
     sleep(50ms)
 
 corner:
-    key(x)
+    key(q)
     sleep(50ms)
 
 center:
-    key(c)
+    key(j)
     sleep(50ms)
 
-color:
-    key(v)
+(color | colors):
+    key(k)
     sleep(50ms)
 
 <user.number_string>: "{number_string}"

@@ -64,8 +64,5 @@ try launch <user.text>:
     insert("{text}")
 try lock screen: user.i3wm_lock()
 
-try {user.workspace_action}+ $:
-    user.i3wm_workspace_actions(workspace_action_list)
-
-try {user.workspace_action}+ then:
+try {user.workspace_action}+:
     user.i3wm_workspace_actions(workspace_action_list)
