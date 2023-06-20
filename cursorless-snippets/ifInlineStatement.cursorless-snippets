@@ -1,0 +1,25 @@
+{
+  "ifInlineStatement": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "$val1 if $condition else $val2"
+        ]
+      }
+    ],
+    "description": "Inline if statement",
+    "variables": {
+      "val1": {
+        "wrapperScopeType": "value"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 		"sounds": ["alveoral_click"],
 		"threshold": {
 			">power": 14,
-			">probability": 0.9995
+			">probability": 0.99
 		},
 		"throttle": {
 			"cluck": 0.12
@@ -12,8 +12,8 @@
 	"tut": {
 		"sounds": ["lateral_click"],
 		"threshold": {
-			">power": 18,
-			">probability": 0.999
+			">power": 22,
+			">probability": 0.9995
 		},
 		"throttle": {
 			"tut": 0.12
