@@ -130,6 +130,8 @@ def on_draw(c: SkiaCanvas, text: str, is_subtitle: bool):
 def get_color(text, is_subtitle):
     if text == 'repeat':
         return 'green'
+    if text == 'awake':
+        return 'blue'
     return setting_color(is_subtitle)
 
 

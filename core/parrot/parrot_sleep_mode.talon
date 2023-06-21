@@ -1,5 +1,7 @@
 mode: sleep
 -
-parrot(cluck): speech.enable()
+parrot(cluck):
+    user.notify('awake')
+    speech.enable()
 
 parrot(tut): skip()
