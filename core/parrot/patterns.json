@@ -2,8 +2,8 @@
 	"cluck": {
 		"sounds": ["alveoral_click"],
 		"threshold": {
-			">power": 20,
-			">probability": 0.99
+			">power": 26,
+			">probability": 0.999
 		},
 		"throttle": {
 			"cluck": 0.12
@@ -12,7 +12,7 @@
 	"tut": {
 		"sounds": ["lateral_click"],
 		"threshold": {
-			">power": 28,
+			">power": 40,
 			">probability": 0.9995
 		},
 		"throttle": {
