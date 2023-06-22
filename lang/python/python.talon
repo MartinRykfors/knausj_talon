@@ -35,6 +35,7 @@ state raise: "raise "
 state yield: "yield "
 state with: "with "
 self taught: "self."
+self dunder class: "self.__class__."
 pie test: "pytest"
 state past: "pass"
 
