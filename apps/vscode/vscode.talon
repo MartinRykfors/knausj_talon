@@ -296,3 +296,7 @@ cursor less switch: user.vscode("cursorless.toggleDecorations")
 find case switch: key(alt-c)
 
 execute file: user.vscode("python.execInTerminal")
+file execute:
+    edit.save_all()
+    sleep(800ms)
+    user.vscode("python.execInTerminal")
