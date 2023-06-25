@@ -15,7 +15,7 @@ center:
     key(j)
     sleep(50ms)
 
-(color | colors):
+(color | colors | coloring):
     key(k)
     sleep(50ms)
 
