@@ -8,7 +8,7 @@
           ]
         },
         "body": [
-          "$val1 if $condition else $val2"
+          "$val1 if $condition else $0"
         ]
       }
     ],
