@@ -10,7 +10,7 @@ climb: edit.up()
 
 sink: edit.down()
 
-land: edit.file_end()
+landing: edit.file_end()
 
 cruise: edit.file_start()
 
