@@ -300,3 +300,6 @@ file execute:
     edit.save_all()
     sleep(800ms)
     user.vscode("python.execInTerminal")
+
+next: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
+snip last: user.vscode("jumpToPrevSnippetPlaceholder")
