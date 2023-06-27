@@ -17,6 +17,7 @@ dig
 du -h,disk usage human
 du,disk usage
 echo
+exit
 false
 find
 grep -Hirn,grab here
