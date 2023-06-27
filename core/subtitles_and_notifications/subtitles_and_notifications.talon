@@ -36,7 +36,7 @@ settings():
     # For each character in the notification extend the timeout 50ms
     user.notifications_timeout_per_char = 50
     # 1.5 seconds is the minimum timeout for a notification
-    user.notifications_timeout_min = 600
+    user.notifications_timeout_min = 800
     # 5 seconds is the maximum timeout for a notification
     user.notifications_timeout_max = 5000
     # Notifications are centered vertically

@@ -131,7 +131,7 @@ def get_color(text, is_subtitle):
     if text == 'repeat':
         return 'green'
     if text == 'awake':
-        return 'blue'
+        return '00ffff'
     return setting_color(is_subtitle)
 
 
