@@ -11,7 +11,7 @@ block, paragraph
 branch, branch
 holler, functionCall
 callee, functionCallee
-cell, notebookCell
+-cell, notebookCell
 chapter, chapter
 char, character
 class, class
