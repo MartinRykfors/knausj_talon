@@ -14,6 +14,9 @@ word <user.word>:
     user.add_phrase_to_history(word)
     insert(word)
 proud <user.word>: user.insert_formatted(word, "CAPITALIZE_FIRST_WORD")
+stout <user.word>:
+    user.insert_formatted(word, "CAPITALIZE_FIRST_WORD")
+    " "
 wind <user.word>: user.insert_formatted(word, "SPACE_AFTER")
 recent list: user.toggle_phrase_history()
 recent close: user.phrase_history_hide()
