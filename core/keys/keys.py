@@ -173,9 +173,9 @@ punctuation_words = {
 symbol_key_words = {
     "dot": ".",
     "point": ".",
-    "quote": "'",
+    "single": "'",
+    "double": '"',
     "question": "?",
-    "apostrophe": "'",
     "square": "[",
     "right square": "]",
     "slash": "/",
@@ -200,8 +200,6 @@ symbol_key_words = {
     "carriage": "^",
     "amper": "&",
     "pipe": "|",
-    "dub quote": '"',
-    "double quote": '"',
     # Currencies
     "dollar": "$",
     # "pound": "£",
