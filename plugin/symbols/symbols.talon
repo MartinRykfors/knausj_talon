@@ -1,5 +1,5 @@
 spamma: ", "
 general: ": "
-arrow: "->"
-dub arrow: "=>"
+pipeline: " | "
+arrow: " -> "
 args: user.insert_between("(", ")")
