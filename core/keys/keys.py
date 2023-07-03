@@ -171,8 +171,7 @@ punctuation_words = {
     "right paren": ")",
 }
 symbol_key_words = {
-    "dot": ".",
-    "point": ".",
+    "punk": ".",
     "single": "'",
     "double": '"',
     "question": "?",
