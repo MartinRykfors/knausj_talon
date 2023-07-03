@@ -12,8 +12,8 @@
 	"tut": {
 		"sounds": ["lateral_click"],
 		"threshold": {
-			">power": 50,
-			">probability": 0.9995
+			">power": 40,
+			">probability": 0.999
 		},
 		"throttle": {
 			"tut": 0.12
