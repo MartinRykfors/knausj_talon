@@ -1,7 +1,16 @@
 mode: sleep
 -
-settings():
-    #stop continuous scroll/gaze scroll with a pop
-    user.mouse_enable_pop_stops_scroll = 0
-    #enable pop click with 'control mouse' mode
-    user.mouse_enable_pop_click = 0
+
+# settings():
+#     speech.timeout = 0.1
+
+parrot(cluck):
+    user.debug("Talon wake parrot noise. Power: {power}")
+    user.talon_wake()
+
+# ^talon wake up$:
+#     user.debug("Talon wake voice command")
+#     user.talon_wake()
+
+#this exists solely to prevent talon from waking up super easily in sleep mode at the moment with wav2letter
+# <phrase>:                   skip()
