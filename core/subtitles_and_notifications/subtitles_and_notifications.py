@@ -1,4 +1,4 @@
-from talon import Module, ui, cron
+from talon import Module, ui, cron, app
 from talon.canvas import Canvas
 from talon.skia.canvas import Canvas as SkiaCanvas
 from talon.skia.imagefilter import ImageFilter
@@ -70,6 +70,10 @@ class Actions:
         """Show notification"""
         possibly_show_text(text, is_subtitle=False)
 
+    def flash_notify(color: str):
+        """Quickly flash a colored square in the center of the screen"""
+        flash_square(color)
+
     def clear_subtitles():
         """Clear all current subtitles and notifications"""
         clear_canvases(subtitle_canvas)
@@ -127,11 +131,12 @@ def on_draw(c: SkiaCanvas, text: str, is_subtitle: bool):
     c.paint.color = setting_color_outline(is_subtitle)
     c.draw_text(text, x, y)
 
+
 def get_color(text, is_subtitle):
-    if text == 'repeat':
-        return 'green'
-    if text == 'awake':
-        return '00ffff'
+    if text == "repeat":
+        return "green"
+    if text == "awake":
+        return "00ffff"
     return setting_color(is_subtitle)
 
 
@@ -156,3 +161,45 @@ def clear_canvases(canvas_list: list[Canvas]):
     for canvas in canvas_list:
         canvas.close()
     canvas_list.clear()
+
+
+def flash_square(color: str):
+    for screen in ui.screens():
+        r = screen.rect
+        center_x = r.x + r.width / 2
+        center_y = r.y + r.height / 2
+        flash_rect_at(color, center_x, center_y)
+
+
+def flash_rect_at(color: str, center_x: int, center_y: int):
+    canvas_size = 200
+    draw_size = canvas_size - 20
+    canvas_rect = Rect(
+        center_x - canvas_size / 2,
+        center_y - canvas_size / 2,
+        canvas_size,
+        canvas_size,
+    )
+    draw_rect = Rect(
+        center_x - draw_size / 2,
+        center_y - draw_size / 2,
+        draw_size,
+        draw_size,
+    )
+    canvas = Canvas.from_rect(canvas_rect)
+
+    def on_draw(c):
+        c.paint.imagefilter = ImageFilter.drop_shadow(2, 2, 1, 1, "000000")
+        c.paint.style = c.paint.Style.FILL
+        c.paint.color = color
+        c.draw_rect(draw_rect)
+
+        c.paint.imagefilter = None
+        c.paint.style = c.paint.Style.STROKE
+        c.paint.color = "black"
+        c.draw_rect(draw_rect)
+
+        cron.after("300ms", canvas.close)
+
+    canvas.register("draw", on_draw)
+    canvas.freeze()

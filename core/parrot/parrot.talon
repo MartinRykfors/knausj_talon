@@ -1,7 +1,7 @@
 parrot(cluck):
-	user.notify('repeat')
+	user.flash_notify('green')
 	core.repeat_phrase(1)
 
 parrot(tut):
 	user.cancel_in_flight_phrase()
-	user.notify('cancel')
+	user.flash_notify('red')
