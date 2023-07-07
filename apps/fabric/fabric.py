@@ -11,6 +11,7 @@ ctx.lists["self.fabric_command"] = {
     "list": "ls",
     "activate": "activate",
     "deactivate": "deactivate",
+    "define": "define",
     "push": "push",
     "build": "build",
     "define": "define",
@@ -19,7 +20,11 @@ ctx.lists["self.fabric_command"] = {
     "select": "select",
     "virtual": "vnc",
     "shell": "ssh",
+    "jason": "jsonrpc",
+    "purge": "purge",
+    "setup": "setup",
 }
+
 
 @mod.capture(rule="{user.fabric_command}+")
 def fabric_commands(m) -> str:
