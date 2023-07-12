@@ -187,6 +187,7 @@ symbol_key_words = {
     "tilde": "~",
     "bang": "!",
     "underscore": "_",
+    "rug": "_",
     "bouba": "(",
     "right bouba": ")",
     "kiki": "{",
