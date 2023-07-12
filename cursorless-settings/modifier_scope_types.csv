@@ -10,7 +10,7 @@ attribute, attribute
 block, paragraph
 branch, branch
 holler, functionCall
-callee, functionCallee
+-callee, functionCallee
 -cell, notebookCell
 chapter, chapter
 char, character
@@ -31,22 +31,22 @@ key, collectionKey
 lambda, anonymousFunction
 line, line
 link, url
-list, list
+collection, list
 map, map
 name, name
 paint, nonWhitespaceSequence
-paragraph, namedParagraph
-part, part
+-paragraph, namedParagraph
+-part, part
 regex, regularExpression
-section, section
-selector, selector
+-section, section
+-selector, selector
 short paint, boundedNonWhitespaceSequence
 start tag, xmlStartTag
 state, statement
 string, string
-subparagraph, subParagraph
-subsection, subSection
-subsubsection, subSubSection
+-subparagraph, subParagraph
+-subsection, subSection
+-subsubsection, subSubSection
 tags, xmlBothTags
 token, token
 type, type
