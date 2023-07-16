@@ -1,0 +1,28 @@
+{
+  "styledDiv": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "with a.div(style=cohost.style({",
+          "\t$attrs",
+          "})):",
+          "\t$body"
+        ]
+      }
+    ],
+    "description": "Cohost styled div",
+    "variables": {
+      "body": {
+        "wrapperScopeType": "statement"
+      }
+    },
+    "insertionScopeTypes": [
+      "statement"
+    ]
+  }
+}
