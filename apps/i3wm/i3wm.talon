@@ -64,5 +64,7 @@ try launch <user.text>:
     insert("{text}")
 try lock screen: user.i3wm_lock()
 
+try shut down shut down: user.i3wm_shutdown()
+
 try {user.workspace_action}+:
     user.i3wm_workspace_actions(workspace_action_list)
