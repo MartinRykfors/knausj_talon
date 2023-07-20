@@ -48,7 +48,7 @@ class Actions:
 def on_launch():
     actions.mode.enable("command")
     actions.mode.disable("dictation")
-    actions.speech.disable()
+    actions.user.sleep()
 
 
 app.register('launch', on_launch)
