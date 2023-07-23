@@ -10,7 +10,7 @@ try work port: user.i3wm_switch_to_workspace("prev")
 try kill kill: app.window_close()
 try stacking: user.i3wm_layout("stacking")
 try default: user.i3wm_layout()
-try tabbed: user.i3wm_layout("tabbed")
+try tabbing: user.i3wm_layout("tabbed")
 
 try reload: user.i3wm_reload()
 try restart: user.i3wm_restart()
