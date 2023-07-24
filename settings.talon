@@ -73,3 +73,4 @@ settings():
 # tag(): user.mouse_cursor_commands_enable
 
 tag(): user.i3wm
+tag(): user.polybar
