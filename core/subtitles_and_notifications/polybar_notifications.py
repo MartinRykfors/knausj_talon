@@ -1,4 +1,4 @@
-from talon import speech_system, actions, cron, Module, Context
+from talon import actions, cron, Module, Context
 import subprocess
 
 
@@ -77,3 +77,14 @@ class PolybarNotificationActions:
         if clear_subtitle:
             cron.cancel(clear_subtitle)
             clear_subtitle = None
+
+    def notify_sleep():
+        """Notify Talon asleep"""
+        subprocess.check_call(("polybar-msg", "action", "#talon_on.module_hide"))
+        subprocess.check_call(("polybar-msg", "action", "#talon_off.module_show"))
+
+    def notify_wake():
+        """Notify Talon awake"""
+        subprocess.check_call(("polybar-msg", "action", "#talon_off.module_hide"))
+        subprocess.check_call(("polybar-msg", "action", "#talon_on.module_show"))
+        actions.user.show_as_subtitle("󰒳  ")

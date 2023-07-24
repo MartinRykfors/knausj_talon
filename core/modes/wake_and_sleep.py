@@ -1,5 +1,4 @@
 from talon import Module, actions
-import subprocess
 
 mod = Module()
 
@@ -9,12 +8,9 @@ class Actions:
     def sleep():
         """Sleep Talon"""
         actions.speech.disable()
-        subprocess.check_call(("polybar-msg", "action", "#talon_on.module_hide"))
-        subprocess.check_call(("polybar-msg", "action", "#talon_off.module_show"))
+        actions.user.notify_sleep()
 
     def wake():
-        """Sleep Talon"""
+        """Wake Talon"""
         actions.speech.enable()
-        subprocess.check_call(("polybar-msg", "action", "#talon_off.module_hide"))
-        subprocess.check_call(("polybar-msg", "action", "#talon_on.module_show"))
-        actions.user.show_as_subtitle("󰒳  ")
+        actions.user.notify_wake()

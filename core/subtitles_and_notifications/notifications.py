@@ -19,6 +19,12 @@ class Actions:
     def clear_subtitles():
         """Clear the subtitle bar"""
 
+    def notify_sleep():
+        """Notify Talon asleep"""
+
+    def notify_wake():
+        """Notify Talon awake"""
+
 
 def on_pre_phrase(phrase):
     words = phrase.get("phrase")

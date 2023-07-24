@@ -1,23 +1,22 @@
-from talon import speech_system, actions, cron, Module, Context, ui
+from talon import cron, Context, ui
 from talon.canvas import Canvas
 from talon.skia.canvas import Canvas as SkiaCanvas
 from talon.skia.imagefilter import ImageFilter
 from talon.types import Rect
-import subprocess
 
 
 ctx = Context()
 
 
 @ctx.action_class("user")
-class PolybarNotificationActions:
+class GenericNotificationActions:
     def flash_cancel():
         """Flash cancel symbol"""
-        flash_square('red')
+        flash_square("red")
 
     def flash_repeat():
         """Flash repeat symbol"""
-        flash_square('green')
+        flash_square("green")
 
     def show_as_subtitle(text: str):
         """Display text in the subtitle bar"""
@@ -26,6 +25,14 @@ class PolybarNotificationActions:
     def clear_subtitles():
         """Clear the subtitle bar"""
         pass
+
+    def notify_sleep():
+        """Notify Talon asleep"""
+        flash_square("blue")
+
+    def notify_wake():
+        """Notify Talon asleep"""
+        flash_square("#00ffff")
 
 
 def flash_square(color: str):
