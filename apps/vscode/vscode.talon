@@ -306,3 +306,5 @@ file execute:
 
 next: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
 snip last: user.vscode("jumpToPrevSnippetPlaceholder")
+
+^launch debug$: user.vscode("workbench.action.debug.selectandstart")
