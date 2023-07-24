@@ -8,6 +8,7 @@ chmod -R,change mode recurse
 chmod,change mode
 chown -R,change owner recurse
 chown,change owner
+code
 cp,copy
 curl
 cut,cutter
@@ -38,6 +39,8 @@ printf,print format
 python3,python three
 pwd,work dear
 rev,reverse
+rm,remove
+rm -r,remove recur
 rsync,are sync
 sed,said
 seq,sequence
