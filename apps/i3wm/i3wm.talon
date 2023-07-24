@@ -22,11 +22,6 @@ try center window: user.i3wm_move_position("center")
 try parent: user.i3wm_focus("parent")
 try child: user.i3wm_focus("child")
 
-try wide: user.i3wm_widen()
-try tall: user.i3wm_lengthen()
-try (slim | narrow): user.i3wm_slim()
-try short: user.i3wm_shorten()
-
 try horizontal shell:
     user.i3wm_split("h")
     user.i3wm_shell()

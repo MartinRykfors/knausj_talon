@@ -41,6 +41,10 @@ workspace_actions = {
     "pull star": [["focus", "right"], ["move", "left"]],
     "pull climb": [["focus", "up"], ["move", "down"]],
     "pull sink": [["focus", "down"], ["move", "up"]],
+    "tall": [["resize", "grow", "height", "10", "px", "or", "10", "ppt"]],
+    "short": [["resize", "shrink", "height", "10", "px", "or", "10", "ppt"]],
+    "wide": [["resize", "grow", "width", "10", "px", "or", "10", "ppt"]],
+    "slim": [["resize", "shrink", "width", "10", "px", "or", "10", "ppt"]],
 }
 
 ctx.lists["self.workspace_action"] = {k: k for k in workspace_actions.keys()}
