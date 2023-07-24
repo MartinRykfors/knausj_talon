@@ -99,6 +99,11 @@ class Actions:
         key = settings.get("user.i3_mod_key")
         actions.key(f"{key}-shift-return")
 
+    def i3wm_shutdown():
+        """Trigger the shutdown menu"""
+        key = settings.get("user.i3_mod_key")
+        actions.key(f"{key}-shift-delete")
+
     def i3wm_shell():
         """Launch a shell"""
         key = settings.get("user.i3_mod_key")
