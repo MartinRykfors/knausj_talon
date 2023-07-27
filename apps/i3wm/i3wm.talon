@@ -55,7 +55,7 @@ try new scratch:
 try launch: user.i3wm_launch()
 try launch <user.text>:
     user.i3wm_launch()
-    sleep(800ms)
+    sleep(100ms)
     insert("{text}")
 try lock screen: user.i3wm_lock()
 
