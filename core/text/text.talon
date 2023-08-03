@@ -1,3 +1,5 @@
+not tag: user.no_text
+-
 #provide both anchored and unachored commands via 'over'
 phrase <user.text>$:
     user.add_phrase_to_history(text)

@@ -33,6 +33,7 @@ mod.list("modifier_key", desc="All modifier keys")
 mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
 mod.list("punctuation", desc="words for inserting punctuation into text")
+mod.tag("no_letters", desc="Tag for disabling letter input")
 
 
 @mod.capture(rule="{self.modifier_key}+")

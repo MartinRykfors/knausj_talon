@@ -2,6 +2,8 @@ tag: browser
 #browser.host: crackingthecryptic.com
 win.title: /Sven's Web App/
 -
+tag(): user.no_letters
+tag(): user.no_text
 
 actual:
     key(;)
