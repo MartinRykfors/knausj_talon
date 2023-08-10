@@ -12,6 +12,7 @@ ctx.lists["self.fabric_command"] = {
     "activate": "activate",
     "deactivate": "deactivate",
     "define": "define",
+    "deploy": "deploy",
     "push": "push",
     "build": "build",
     "define": "define",
