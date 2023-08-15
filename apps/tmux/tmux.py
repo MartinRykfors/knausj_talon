@@ -118,3 +118,6 @@ class UserActions:
 
     def split_number(index: int):
         actions.user.tmux_execute_command(f"select-pane -t {index}")
+
+    def split_cycle():
+        actions.user.split_next()
