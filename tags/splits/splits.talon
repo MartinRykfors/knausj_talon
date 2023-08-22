@@ -1,23 +1,23 @@
 tag: user.splits
 -
-split right:
-    user.split_window_right()
-    app.notify("deprecated")
+# split right:
+#     user.split_window_right()
+#     app.notify("deprecated")
 split star: user.split_window_right()
 
-split left:
-    user.split_window_left()
-    app.notify("deprecated")
+# split left:
+#     user.split_window_left()
+#     app.notify("deprecated")
 split port: user.split_window_left()
 
-split down:
-    user.split_window_down()
-    app.notify("deprecated")
+# split down:
+#     user.split_window_down()
+#     app.notify("deprecated")
 split sink: user.split_window_down()
 
-split up:
-    user.split_window_up()
-    app.notify("deprecated")
+# split up:
+#     user.split_window_up()
+#     app.notify("deprecated")
 split climb: user.split_window_up()
 
 split (vertically | vertical): user.split_window_vertically()
