@@ -65,11 +65,11 @@ zen switch: user.vscode("workbench.action.toggleZenMode")
 light switch: user.vscode("workbench.action.toggleLightDarkThemes")
 
 # File Commands
-file hunt [<user.text>]:
+file (hunt | rummage) [<user.text>]:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     insert(text or "")
-file hunt (pace | paste):
+file (hunt | rummage) (pace | paste):
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     edit.paste()
