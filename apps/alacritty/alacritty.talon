@@ -8,4 +8,4 @@ tag(): user.tmux
 # TODO: explain
 tag(): user.file_manager
 
-save and exit vim: ":wq"
+save and (exit | quit | close) vim: ":wq"
