@@ -236,6 +236,7 @@ alternate_keys = {
     "page up": "pageup",
     "page down": "pagedown",
     "punch": "enter",
+    "kick": "enter",
     "strike": "escape",
     "ram": "end",
     "whip": "home",
