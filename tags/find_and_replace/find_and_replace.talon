@@ -1,22 +1,22 @@
 tag: user.find_and_replace
 -
-rummage this: user.find("")
-rummage this (pace | paste):
+(rummage | recon) this: user.find("")
+(rummage | recon) this (pace | paste):
     user.find("")
     sleep(25ms)
     edit.paste()
-rummage this <user.text>: user.find(text)
-rummage all: user.find_everywhere("")
-rummage all (pace | paste):
+(rummage | recon) this <user.text>: user.find(text)
+(rummage | recon) (all | everything): user.find_everywhere("")
+(rummage | recon) (all | everything) (pace | paste):
     user.find_everywhere("")
     sleep(25ms)
     edit.paste()
-rummage all <user.text>: user.find_everywhere(text)
-rummage case: user.find_toggle_match_by_case()
-rummage word: user.find_toggle_match_by_word()
-rummage expression: user.find_toggle_match_by_regex()
-rummage next: user.find_next()
-rummage previous: user.find_previous()
+(rummage | recon) (all | everything) <user.text>: user.find_everywhere(text)
+(rummage | recon) case: user.find_toggle_match_by_case()
+(rummage | recon) word: user.find_toggle_match_by_word()
+(rummage | recon) expression: user.find_toggle_match_by_regex()
+(rummage | recon) next: user.find_next()
+(rummage | recon) previous: user.find_previous()
 replace this [<user.text>]: user.replace(text or "")
 replace all: user.replace_everywhere("")
 replace <user.text> all: user.replace_everywhere(text)
