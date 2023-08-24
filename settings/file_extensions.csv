@@ -1,45 +1,45 @@
 File extension,Name
-.py,dot pie
-.talon,dot talon
-.md,dot mark down
-.sh,dot shell
-.vim,dot vim
-.c,dot see
-.cs,dot see sharp
-.com,dot com
-.net,dot net
-.org,dot org
-.us,dot us
-.us,dot U S
-.co.uk,dot co dot UK
-.exe,dot exe
-.bin,dot bin
-.bin,dot bend
-.json,dot jason
-.json,dot jay son
-.js,dot J S
-.js,dot java script
-.ts,dot TS
-.ts,dot type script
-.csv,dot csv
+.py, pie
+.talon, talon
+.md, mark down
+.sh, shell
+.vim, vim
+.c, see
+.cs, see sharp
+.com, com
+.net, net
+.org, org
+.us, us
+.us, U S
+.co.uk, co UK
+.exe, exe
+.bin, bin
+.bin, bend
+.json, jason
+.json, jay son
+.js, J S
+.js, java script
+.ts, TS
+.ts, type script
+.csv, csv
 .csv,totssv
 .csv,tot csv
-.csv,dot cassie
-.txt,dot text
-.jl,dot julia
-.jl,dot J L
-.html,dot html
-.css,dot css
-.sass,dot sass
-.svg,dot svg
-.png,dot png
-.wav,dot wave
-.flac,dot flack
-.doc,dot doc
-.docx,dot doc x
-.pdf,dot pdf
-.tar,dot tar
-.gz,dot g z
-.gzip,dot g zip
-.zip,dot zip
-.toml,dot toml
+.csv, cassie
+.txt, text
+.jl, julia
+.jl, J L
+.html, html
+.css, css
+.sass, sass
+.svg, svg
+.png, png
+.wav, wave
+.flac, flack
+.doc, doc
+.docx, doc x
+.pdf, pdf
+.tar, tar
+.gz, g z
+.gzip, g zip
+.zip, zip
+.toml, toml

@@ -1,1 +1,1 @@
-{user.file_extension}: "{file_extension}"
+extension {user.file_extension}: "{file_extension}"
