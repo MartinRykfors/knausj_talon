@@ -34,7 +34,7 @@ link, url
 collection, list
 map, map
 name, name
-paint, nonWhitespaceSequence
+painting, nonWhitespaceSequence
 -paragraph, namedParagraph
 -part, part
 regex, regularExpression
