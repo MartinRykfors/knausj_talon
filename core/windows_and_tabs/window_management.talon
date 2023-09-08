@@ -5,7 +5,6 @@ window close: app.window_close()
 window hide: app.window_hide()
 focus <user.running_applications>: user.switcher_focus(running_applications)
 
-terminal: user.switcher_focus("terminal")
 studio: user.switcher_focus("code")
 inferno: user.switcher_focus("firefox")
 editor: user.switcher_focus("emacs")
