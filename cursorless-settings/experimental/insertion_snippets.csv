@@ -8,5 +8,6 @@ for each, forEach
 comprehension, listComprehension
 filter comprehension, listFilterComprehension
 with, with
+signal handler, signalHandler
 state handler, stateHandler
 styled div, styledDiv

@@ -1,0 +1,25 @@
+{
+  "signalHandler": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "elif e.sig == qif.$signal:",
+          "\t$body",
+          "\treturn 0"
+        ]
+      }
+    ],
+    "description": "Signal handler",
+    "variables": {
+      "signal": {}
+    },
+    "insertionScopeTypes": [
+      "branch"
+    ]
+  }
+}
