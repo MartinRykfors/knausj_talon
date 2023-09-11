@@ -68,6 +68,8 @@ tr,translate
 true
 uniq -c,unique count
 uniq,unique
+vi,vee
+vim
 wc -c,word count characters
 wc -l,word count lines
 wc,word count
