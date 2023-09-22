@@ -8,7 +8,7 @@
           ]
         },
         "body": [
-          "elif e.sig == qif.$signal:",
+          "elif e.sig == $signal:",
           "\t$body",
           "\treturn 0"
         ]
