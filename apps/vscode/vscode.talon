@@ -306,6 +306,11 @@ file execute:
     user.vscode("python.execInTerminal")
 
 next: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
+selfie next:
+    user.vscode_and_wait("jumpToNextSnippetPlaceholder")
+    insert("self")
+    user.vscode_and_wait("jumpToNextSnippetPlaceholder")
+
 snip last: user.vscode("jumpToPrevSnippetPlaceholder")
 
 ^launch debug$: user.vscode("workbench.action.debug.selectandstart")
