@@ -11,3 +11,4 @@ with, with
 signal handler, signalHandler
 state handler, stateHandler
 styled div, styledDiv
+test case, testCase

@@ -1,0 +1,29 @@
+{
+    "testCase": {
+        "definitions": [
+            {
+                "scope": {
+                    "langIds": [
+                        "python"
+                    ]
+                },
+                "body": [
+                    "def test_$name(self):",
+                    "\t$body"
+                ]
+            }
+        ],
+        "description": "Test case",
+        "variables": {
+            "name": {
+                "formatter": "snakeCase"
+            },
+            "body": {}
+        },
+        "insertionScopeTypes": [
+            "namedFunction",
+            "statement",
+            "line"
+        ]
+    }
+}
