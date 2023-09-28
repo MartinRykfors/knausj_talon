@@ -198,8 +198,8 @@ git unstage all: user.vscode("git.unstageAll")
 pull request: user.vscode("pr.create")
 # Use keyboard shortcuts because VSCode relies on when clause contexts to choose the appropriate
 # action: https://code.visualstudio.com/api/references/when-clause-contexts
-change next: key(alt-f5)
-change last: key(shift-alt-f5)
+# change next: key(alt-f5)
+# change last: key(shift-alt-f5)
 
 # Testing
 test run: user.vscode("testing.runAtCursor")
