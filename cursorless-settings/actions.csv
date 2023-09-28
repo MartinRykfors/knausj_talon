@@ -43,7 +43,7 @@ scout all, findInWorkspace
 shuffle, randomizeTargets
 snippet, insertSnippet
 snippet make, generateSnippet
-arrange, sortTargets
+-arrange, sortTargets
 swap, swapTargets
 take, setSelection
 type deaf, revealTypeDefinition
