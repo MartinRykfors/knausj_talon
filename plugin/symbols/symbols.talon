@@ -2,4 +2,4 @@ spamma: ", "
 general: ": "
 pipeline: " | "
 arrow: " -> "
-args: user.insert_between("(", ")")
+(args | call it): user.insert_between("(", ")")
