@@ -12,7 +12,7 @@ branch, branch
 holler, functionCall
 -callee, functionCallee
 -cell, notebookCell
-chapter, chapter
+-chapter, chapter
 char, character
 class, class
 class name, className
@@ -20,7 +20,7 @@ comment, comment
 condition, condition
 element, xmlElement
 end tag, xmlEndTag
-environment, environment
+-environment, environment
 file, document
 funk, namedFunction
 funk name, functionName
@@ -30,7 +30,7 @@ item, collectionItem
 key, collectionKey
 lambda, anonymousFunction
 line, line
-link, url
+-link, url
 collection, list
 map, map
 name, name
@@ -50,7 +50,7 @@ string, string
 tags, xmlBothTags
 token, token
 type, type
-einheit, unit
+-einheit, unit
 value, value
 word, word
 
