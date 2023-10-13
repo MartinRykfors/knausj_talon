@@ -134,8 +134,7 @@ formatters_dict = {
     ),
     "SPACE_AFTER": (SEP, lambda i, word, last: word if not last else f"{word} "),
     "GRAVE_QUOTED_STRING": (SEP, surround('`')),
-    "LEADING_DASH_SPACE_AFTER": (SEP, lambda i, w, last: f"-{w} " if i == 0 and last else f"-{w}" if i == 0 else f"{w} " if last else w),
-    "LEADING_DASHES_SPACE_AFTER": (SEP, lambda i, w, last: f"--{w} " if i == 0 and last else f"--{w}" if i == 0 else f"{w} " if last else w)
+    "LEADING_DASHES_SPACE_AFTER": (NOSEP, lambda i, w, last: f"--{w}" if i == 0 and last else f"--{w}" if i == 0 else f"-{w} " if last else f"-{w}")
 }
 
 # This is the mapping from spoken phrases to formatters
@@ -148,8 +147,8 @@ formatters_words = {
     "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
     "joust": formatters_dict["DASH_SEPARATED"],
-    "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
+    # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
+    # "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
     "slasher": formatters_dict["SLASH_SEPARATED"],
     "smash": formatters_dict["NO_SPACES"],
     "snake": formatters_dict["SNAKE_CASE"],
@@ -157,8 +156,7 @@ formatters_words = {
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
     "storm": formatters_dict["SPACE_AFTER"],
     "graveyard": formatters_dict["GRAVE_QUOTED_STRING"],
-    "spike": formatters_dict["LEADING_DASH_SPACE_AFTER"],
-    "nail": formatters_dict["LEADING_DASHES_SPACE_AFTER"],
+    "spitroast": formatters_dict["LEADING_DASHES_SPACE_AFTER"],
 }
 
 all_formatters = {}
