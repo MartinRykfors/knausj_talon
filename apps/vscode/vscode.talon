@@ -288,7 +288,7 @@ set book <number>: user.vscode("numberedBookmarks.toggleBookmark{number}")
 
 # custom
 cursor less switch: user.vscode("cursorless.toggleDecorations")
-(hope this works | run last terminal):
+run last terminal:
     edit.save_all()
     sleep(800ms)
     user.switcher_focus("alacritty")
@@ -299,7 +299,6 @@ cursor less switch: user.vscode("cursorless.toggleDecorations")
 
 find case switch: key(alt-c)
 
-execute file: user.vscode("python.execInTerminal")
 file execute:
     edit.save_all()
     sleep(800ms)
