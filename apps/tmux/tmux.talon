@@ -41,7 +41,7 @@ mux window new:
 mux window <number>:
     user.tmux_keybind("{number}")
 
-mux window previous:
+mux window (last | previous):
     user.tmux_keybind("p")
 
 mux window next:
