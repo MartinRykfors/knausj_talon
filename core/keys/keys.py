@@ -21,7 +21,7 @@ alphabet_list = get_list_from_csv(
 )
 
 # used for number keys & function keys respectively
-digits = "zero unit two three four five six seven eight nine".split()
+digits = "zero unit two three four five six seven tate nine".split()
 f_digits = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split()
 
 mod = Module()
