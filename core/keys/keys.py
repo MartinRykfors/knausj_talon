@@ -238,7 +238,7 @@ alternate_keys = {
     "punch": "enter",
     "kick": "enter",
     "strike": "escape",
-    "ram": "end",
+    "cram": "end",
     "whip": "home",
     "void": "space",
 }
