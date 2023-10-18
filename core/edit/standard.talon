@@ -12,19 +12,10 @@ copy that: edit.copy()
 nope: edit.undo()
 redo that: edit.redo()
 # paste match: edit.paste_match_style()
-(file save | disk it): edit.save()
-(file save everything | disk all): edit.save_all()
-padding: user.insert_between(" ", " ")
-padding <user.symbol_key>+:
-    insert(" ")
-    user.insert_many(symbol_key_list)
-    insert(" ")
+disk it: edit.save()
+disk all: edit.save_all()
+
 slap: edit.line_insert_down()
 slapper:
     edit.line_insert_down()
     edit.line_insert_down()
-
-terminal repeat:
-    user.switcher_focus("Terminal")
-    sleep(300ms)
-    user.terminal_run_last()
