@@ -150,7 +150,7 @@ punctuation_words = {
     "full stop": ".",
     "semicolon": ";",
     "semlon": ";",
-    "kernel": ":",
+    "colonel": ":",
     "forward slash": "/",
     "question mark": "?",
     "exclamation mark": "!",
@@ -238,7 +238,7 @@ alternate_keys = {
     "punch": "enter",
     "kick": "enter",
     "strike": "escape",
-    "ram": "end",
+    "cram": "end",
     "whip": "home",
     "void": "space",
 }
