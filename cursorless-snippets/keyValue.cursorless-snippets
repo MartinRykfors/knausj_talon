@@ -1,0 +1,25 @@
+{
+  "keyValue": {
+    "definitions": [
+      {
+        "scope": {
+          "langIds": [
+            "python"
+          ]
+        },
+        "body": [
+          "'$key': '$value'"
+        ],
+        "variables": {
+          "name": {
+            "formatter": "snakeCase"
+          }
+        }
+      }
+    ],
+    "description": "Python string key/value pair",
+    "insertionScopeTypes": [
+      "collectionItem"
+    ]
+  }
+}
