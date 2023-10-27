@@ -8,9 +8,7 @@
           ]
         },
         "body": [
-          "with a.div(style=cohost.style({",
-          "\t$attrs",
-          "})):",
+          "with a.div(style=cohost.style({$attrs})):",
           "\t$body"
         ]
       }
