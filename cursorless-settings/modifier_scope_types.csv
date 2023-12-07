@@ -52,7 +52,7 @@ token, token
 type, type
 -einheit, unit
 value, value
-word, word
+sub, word
 
 
 # 2023-05-26 13:19:49 - New entries automatically added by cursorless
