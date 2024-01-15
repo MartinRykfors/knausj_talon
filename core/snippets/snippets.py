@@ -2,7 +2,7 @@ import glob
 from collections import defaultdict
 from pathlib import Path
 
-from talon import Context, Module, actions, app, fs
+from talon import Context, Module, actions, app, fs, settings
 
 from ..modes.language_modes import language_ids
 from .snippet_types import Snippet
@@ -16,6 +16,13 @@ mod.list("snippet", "List of insertion snippets")
 mod.list("snippet_with_phrase", "List of insertion snippets containing a text phrase")
 mod.list("snippet_wrapper", "List of wrapper snippets")
 
+mod.setting(
+    "snippets_dir",
+    type=str,
+    default=None,
+    desc="Directory (relative to Talon user) containing additional snippets",
+)
+
 context_map = {
     # `_` represents the global context, ie snippets available regardless of language
     "_": Context(),
@@ -27,6 +34,20 @@ for lang in language_ids:
     ctx = Context()
     ctx.matches = f"code.language: {lang}"
     context_map[lang] = ctx
+
+
+def get_setting_dir():
+    setting_dir = settings.get("user.snippets_dir")
+    if not setting_dir:
+        return None
+
+    dir = Path(setting_dir)
+
+    if not dir.is_absolute():
+        user_dir = Path(actions.path.talon_user())
+        dir = user_dir / dir
+
+    return dir.resolve()
 
 
 @mod.action_class
