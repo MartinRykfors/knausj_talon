@@ -2,18 +2,18 @@
 os: linux
 tag: user.i3wm
 -
-try [work] <number_small>: user.i3wm_switch_to_workspace(number_small)
-try flip: user.i3wm_switch_to_workspace("back_and_forth")
-try work star: user.i3wm_switch_to_workspace("next")
-try work port: user.i3wm_switch_to_workspace("prev")
+^try [work] <number_small>: user.i3wm_switch_to_workspace(number_small)
+^try flip: user.i3wm_switch_to_workspace("back_and_forth")
+^try work star: user.i3wm_switch_to_workspace("next")
+^try work port: user.i3wm_switch_to_workspace("prev")
 
-try kill kill: app.window_close()
-try stacking: user.i3wm_layout("stacking")
-try default: user.i3wm_layout()
-try tabbing: user.i3wm_layout("tabbed")
+^try kill kill: app.window_close()
+^try stacking: user.i3wm_layout("stacking")
+^try default: user.i3wm_layout()
+^try tabbing: user.i3wm_layout("tabbed")
 
-try reload: user.i3wm_reload()
-try restart: user.i3wm_restart()
+^try reload: user.i3wm_reload()
+# try restart: user.i3wm_restart()
 
 # (full screen | scuba): user.i3wm_fullscreen()
 # toggle floating: user.i3wm_float()
