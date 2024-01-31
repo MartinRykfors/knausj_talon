@@ -1,6 +1,6 @@
 tag: browser
 #browser.host: crackingthecryptic.com
-win.title: /Sven's Web App/
+win.title: /SudokuPad/
 -
 tag(): user.no_letters
 tag(): user.no_text

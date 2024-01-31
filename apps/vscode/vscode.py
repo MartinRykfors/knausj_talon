@@ -24,6 +24,8 @@ os: linux
 and app.name: VSCodium
 os: linux
 and app.name: Codium
+os: linux
+and win.title: /Code - OSS/
 """
 mod.apps.vscode = """
 os: windows
