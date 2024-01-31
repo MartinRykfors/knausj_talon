@@ -154,7 +154,7 @@ formatters_words = {
     "snake": formatters_dict["SNAKE_CASE"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    "storm": formatters_dict["SPACE_AFTER"],
+    "storming": formatters_dict["SPACE_AFTER"],
     "graveyard": formatters_dict["GRAVE_QUOTED_STRING"],
     "spitroast": formatters_dict["LEADING_DASHES_SPACE_AFTER"],
 }
