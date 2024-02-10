@@ -6,3 +6,4 @@ settings/datum.local.csv
 # Locally generated
 .vscode/settings.json
 .DS_Store
+.venv
