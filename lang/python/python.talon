@@ -56,3 +56,5 @@ import <user.code_libraries>:
     key(end enter)
 
 from import: user.insert_between("from ", " import ")
+
+assertion <user.python_assertion>: user.insert_between("self.{python_assertion}(", ")")

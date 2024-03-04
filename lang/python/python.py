@@ -145,6 +145,47 @@ ctx.lists["user.python_exception"] = {
     for exception in exception_list
 }
 
+mod.list("python_assertion", desc="python unittest assertion functions")
+ctx.lists["user.python_assertion"] = {
+    "false": "assertFalse",
+    "true": "assertTrue",
+    "raises": "assertRaises",
+    "warns": "assertWarns",
+    "logs": "assertLogs",
+    "equal": "assertEqual",
+    "not equal": "assertNotEqual",
+    "almost equal": "assertAlmostEqual",
+    "not almost equal": "assertNotAlmostEqual",
+    "sequence equal": "assertSequenceEqual",
+    "list equal": "assertListEqual",
+    "tuple equal": "assertTupleEqual",
+    "set equal": "assertSetEqual",
+    "in": "assertIn",
+    "not in": "assertNotIn",
+    "is": "assertIs",
+    "is not": "assertIsNot",
+    "dict equal": "assertDictEqual",
+    "dict contains subset": "assertDictContainsSubset",
+    "count equal": "assertCountEqual",
+    "multi line equal": "assertMultiLineEqual",
+    "less": "assertLess",
+    "less equal": "assertLessEqual",
+    "greater": "assertGreater",
+    "greater equal": "assertGreaterEqual",
+    "is none": "assertIsNone",
+    "is not none": "assertIsNotNone",
+    "is instance": "assertIsInstance",
+    "not is instance": "assertNotIsInstance",
+    "raises regex": "assertRaisesRegex",
+    "warns regex": "assertWarnsRegex",
+    "regex": "assertRegex",
+    "not regex": "assertNotRegex",
+}
+
+
+@mod.capture(rule="{user.python_assertion}")
+def python_assertion(m) -> str:
+    return str(m)
 
 @ctx.action_class("user")
 class UserActions:
