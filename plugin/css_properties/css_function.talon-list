@@ -1,0 +1,38 @@
+list: user.css_function
+-
+
+attr: attr
+calc: calc
+circle: circle
+ellipse: ellipse
+hsl: hsl
+hsla: hsla
+inset: inset
+linear gradient: linear-gradient
+matrix: matrix
+matrix thtree d: matrix3d
+polygon: polygon
+radial gradient: radial-gradient
+repeating linear gradient: repeating-linear-gradient
+repeating radial gradient: repeating-radial-gradient
+repeating conic gradient: repeating-conic-gradient
+rgb: rgb
+rgba: rgba
+rotate: rotate
+rotate three d: rotate3d
+rotate x: rotateX
+rotate y: rotateY
+rotate z: rotateZ
+scale: scale
+scale three d: scale3d
+scale x: scaleX
+scale y: scaleY
+scale z: scaleZ
+skew: skew
+skew x: skewX
+skew y: skewY
+translate: translate
+translate three d: translate3d
+translate x: translateX
+translate y: translateY
+translate z: translateZ

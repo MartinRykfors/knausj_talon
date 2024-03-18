@@ -1,0 +1,294 @@
+list: user.css_value
+-
+
+absolute: absolute
+alias: alias
+all: all
+all petite caps: all-petite-caps
+all scroll: all-scroll
+all small caps: all-small-caps
+allow end: allow-end
+alpha: alpha
+alternate: alternate
+alternate reverse: alternate-reverse
+always: always
+armenian: armenian
+auto: auto
+avoid: avoid
+avoid column: avoid-column
+avoid page: avoid-page
+backwards: backwards
+baseline: baseline
+below left: below left
+below right: below right
+bidi override: bidi-override
+blink: blink
+block: block
+bold: bold
+bolder: bolder
+border box: border-box
+both: both
+bottom: bottom
+box decoration: box-decoration
+break all: break-all
+break word: break-word
+capitalize: capitalize
+cell: cell
+center: center
+center center: center center
+circle: circle
+clone: clone
+close quote: close-quote
+col resize: col-resize
+collapse: collapse
+color: color
+color burn: color-burn
+color dodge: color-dodge
+column: column
+column reverse: column-reverse
+compact: compact
+condensed: condensed
+contain: contain
+container: container
+content box: content-box
+contents: contents
+context menu: context-menu
+copy: copy
+cover: cover
+crisp edges: crisp-edges
+crosshair: crosshair
+darken: darken
+dashed: dashed
+decimal: decimal
+decimal leading zero: decimal-leading-zero
+default: default
+descendants: descendants
+difference: difference
+distribute: distribute
+dot: dot
+dotted: dotted
+double: double
+double circle: double-circle
+e resize: e-resize
+ease in: ease-in
+ease in out: ease-in-out
+ease out: ease-out
+edges: edges
+ellipsis: ellipsis
+embed: embed
+end: end
+ew resize: ew-resize
+exclusion: exclusion
+expanded: expanded
+extra condensed: extra-condensed
+extra expanded: extra-expanded
+fill box: fill-box
+filled: filled
+first: first
+first allow end: first allow-end
+first force end: first force-end
+fixed: fixed
+flex: flex
+flex end: flex-end
+flex start: flex-start
+force end: force-end
+forwards: forwards
+from image: from-image
+full width: full-width
+geometric precision: geometricPrecision
+georgian: georgian
+groove: groove
+hard light: hard-light
+help: help
+hidden: hidden
+hide: hide
+horizontal: horizontal
+hue: hue
+icon: icon
+infinite: infinite
+inherit: inherit
+initial: initial
+ink: ink
+inline block: inline-block
+inline flex: inline-flex
+inline table: inline-table
+inset: inset
+inside: inside
+inter word: inter-word
+isolate: isolate
+italic: italic
+justify: justify
+keep all: keep-all
+large: large
+larger: larger
+last: last
+last allow end: last allow-end
+last force end: last force-end
+left: left
+left center: left center
+left right: left right
+left top: left top
+lighten: lighten
+lighter: lighter
+line through: line-through
+linear: linear
+list item: list-item
+local: local
+loose: loose
+lower alpha: lower-alpha
+lower greek: lower-greek
+lower latin: lower-latin
+lower roman: lower-roman
+lowercase: lowercase
+luminosity: luminosity
+mandatory: mandatory
+manipulation: manipulation
+margin box: margin-box
+match parent: match-parent
+middle: middle
+move: move
+multiply: multiply
+n resize: n-resize
+ne resize: ne-resize
+nesw resize: nesw-resize
+no close quote: no-close-quote
+no drop: no-drop
+no open quote: no-open-quote
+no repeat: no-repeat
+none: none
+normal: normal
+not allowed: not-allowed
+nowrap: nowrap
+ns resize: ns-resize
+nw resize: nw-resize
+nwse resize: nwse-resize
+objects: objects
+oblique: oblique
+open: open
+open quote: open-quote
+optimize legibility: optimizeLegibility
+optimize speed: optimizeSpeed
+outset: outset
+outside: outside
+over left: over left
+overlay: overlay
+overline: overline
+padding box: padding-box
+page: page
+pan down: pan-down
+pan left: pan-left
+pan right: pan-right
+pan up: pan-up
+pan x: pan-x
+pan y: pan-y
+paused: paused
+petite caps: petite-caps
+pixelated: pixelated
+pointer: pointer
+pre: pre
+pre line: pre-line
+pre wrap: pre-wrap
+preserve three d: preserve-3d
+progress: progress
+proximity: proximity
+relative: relative
+repeat: repeat
+repeat no repeat: repeat no-repeat
+repeat x: repeat-x
+repeat y: repeat-y
+reverse: reverse
+ridge: ridge
+right: right
+right bottom: right bottom
+round: round
+row resize: row-resize
+row reverse: row-reverse
+rtl: rtl
+run in: run-in
+s resize: s-resize
+saturation: saturation
+scale down: scale-down
+screen: screen
+scroll: scroll
+scroll position: scroll-position
+se resize: se-resize
+semi condensed: semi-condensed
+semi expanded: semi-expanded
+sesame: sesame
+sideways: sideways
+sideways left: sideways-left
+sideways right: sideways-right
+small: small
+small caps: small-caps
+smaller: smaller
+smooth: smooth
+snap: snap
+soft light: soft-light
+solid: solid
+space: space
+space around: space-around
+space between: space-between
+spaces: spaces
+square: square
+start: start
+start end: start end
+step end: step-end
+step start: step-start
+sticky: sticky
+stretch: stretch
+strict: strict
+stroke box: stroke-box
+style: style
+sub: sub
+super: super
+sw resize: sw-resize
+table: table
+table caption: table-caption
+table cell: table-cell
+table column: table-column
+table column group: table-column-group
+table footer group: table-footer-group
+table header group: table-header-group
+table row: table-row
+table row group: table-row-group
+text: text
+text bottom: text-bottom
+text top: text-top
+thick: thick
+thin: thin
+titling caps: titling-caps
+top: top
+top bottom: top bottom
+transparent: transparent
+triangle: triangle
+ultra condensed: ultra-condensed
+ultra expanded: ultra-expanded
+under: under
+under left: under left
+under right: under right
+underline: underline
+unicase: unicase
+unset: unset
+upper alpha: upper-alpha
+upper latin: upper-latin
+upper roman: upper-roman
+uppercase: uppercase
+upright: upright
+use glyph orientation: use-glyph-orientation
+vertical: vertical
+vertical lr: vertical-lr
+vertical rl: vertical-rl
+vertical text: vertical-text
+view box: view-box
+w resize: w-resize
+wait: wait
+wavy: wavy
+weight: weight
+wrap: wrap
+wrap reverse: wrap-reverse
+x large: x-large
+x small: x-small
+xx large: xx-large
+xx small: xx-small
+zoom in: zoom-in
+zoom out: zoom-out
