@@ -1,8 +1,9 @@
-from talon import speech_system, actions, cron, Module, Context
+from talon import speech_system, actions, cron, Module, Context, app, registry, scope
 import subprocess
 
 
 mod = Module()
+last_known_sleeping = None
 
 
 @mod.action_class
@@ -34,4 +35,25 @@ def on_pre_phrase(phrase):
         actions.user.show_as_subtitle(" ".join(words))
 
 
+def on_update_contexts():
+    global last_known_sleeping
+    modes = scope.get("mode")
+    is_sleeping = "sleep" in modes
+    if last_known_sleeping is None:
+        last_known_sleeping = is_sleeping
+        return
+
+    if is_sleeping != last_known_sleeping:
+        last_known_sleeping = is_sleeping
+        if last_known_sleeping:
+            actions.user.notify_sleep()
+        else:
+            actions.user.notify_wake()
+
+
+def on_ready():
+    registry.register("update_contexts", on_update_contexts)
+
+
 speech_system.register("pre:phrase", on_pre_phrase)
+app.register("ready", on_ready)
