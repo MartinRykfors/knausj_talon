@@ -124,12 +124,18 @@ formatters_dict = {
     "SPACE_SURROUNDED_STRING": (SEP, surround(" ")),
     "DOT_SEPARATED": words_with_joiner("."),
     "DOT_SNAKE": (NOSEP, lambda i, word, _: "." + word if i == 0 else "_" + word),
-    "SLASH_SEPARATED": (NOSEP, every_word(lambda w: "/" + w)),
-    "CAPITALIZE_FIRST_WORD": (SEP, first_vs_rest(lambda w: w[:1].upper() + w[1:])),
+    "ALL_SLASHES": (NOSEP, every_word(lambda w: "/" + w)),
+    "SLASH_SEPARATED": words_with_joiner("/"),
     "CAPITALIZE_ALL_WORDS": (
         SEP,
         lambda i, word, _: word[:1].upper() + word[1:]
         if i == 0 or word not in words_to_keep_lowercase
+        else word,
+    ),
+    "CAPITALIZE_FIRST_WORD": (
+        SEP,
+        lambda i, word, _: word[:1].upper() + word[1:]
+        if i == 0
         else word,
     ),
     "SPACE_AFTER": (SEP, lambda i, word, last: word if not last else f"{word} "),
@@ -137,26 +143,34 @@ formatters_dict = {
     "LEADING_DASHES_SPACE_AFTER": (NOSEP, lambda i, w, last: f"--{w}" if i == 0 and last else f"--{w}" if i == 0 else f"-{w} " if last else f"-{w}")
 }
 
-# This is the mapping from spoken phrases to formatters
+# Mapping from spoken phrases to formatter names
+code_formatter_names = {
+    "all cap": "ALL_CAPS",
+    "no cap": "ALL_LOWERCASE",
+    "camel": "PRIVATE_CAMEL_CASE",
+    "gravel": "DOT_SEPARATED",
+    "dub string": "DOUBLE_QUOTED_STRING",
+    "dunder": "DOUBLE_UNDERSCORE",
+    "hammer": "PUBLIC_CAMEL_CASE",
+    "joust": "DASH_SEPARATED",
+    # "packed": "DOUBLE_COLON_SEPARATED",
+    # "padded": "SPACE_SURROUNDED_STRING",
+    "slasher": "ALL_SLASHES",
+    "conga": "SLASH_SEPARATED",
+    "smash": "NO_SPACES",
+    "snake": "SNAKE_CASE",
+    "string": "SINGLE_QUOTED_STRING",
+    "graveyard": "GRAVE_QUOTED_STRING",
+    "spitroast": "LEADING_DASHES_SPACE_AFTER",
+}
+prose_formatter_names = {
+    "sentence": "CAPITALIZE_FIRST_WORD",
+    "title": "CAPITALIZE_ALL_WORDS",
+}
+# Mapping from spoken phrases to formatters
 formatters_words = {
-    "all cap": formatters_dict["ALL_CAPS"],
-    "no cap": formatters_dict["ALL_LOWERCASE"],
-    "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
-    "gravel": formatters_dict["DOT_SEPARATED"],
-    "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
-    "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
-    "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
-    "joust": formatters_dict["DASH_SEPARATED"],
-    # "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
-    # "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
-    "slasher": formatters_dict["SLASH_SEPARATED"],
-    "smash": formatters_dict["NO_SPACES"],
-    "snake": formatters_dict["SNAKE_CASE"],
-    "string": formatters_dict["SINGLE_QUOTED_STRING"],
-    "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    "storming": formatters_dict["SPACE_AFTER"],
-    "graveyard": formatters_dict["GRAVE_QUOTED_STRING"],
-    "spitroast": formatters_dict["LEADING_DASHES_SPACE_AFTER"],
+    phrase: formatters_dict[name]
+    for phrase, name in (code_formatter_names | prose_formatter_names).items()
 }
 
 all_formatters = {}
