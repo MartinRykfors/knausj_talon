@@ -207,19 +207,19 @@ pull request: user.vscode("pr.create")
 # change last: key(shift-alt-f5)
 
 # Testing
-test run: user.vscode("testing.runAtCursor")
-test run file: user.vscode("testing.runCurrentFile")
-test run all: user.vscode("testing.runAll")
-test run failed: user.vscode("testing.reRunFailTests")
-test run last: user.vscode("testing.reRunLastRun")
+# keys: user.vscode("testing.runAtCursor")
+# test run file: user.vscode("testing.runCurrentFile")
+# test run all: user.vscode("testing.runAll")
+# test run failed: user.vscode("testing.reRunFailTests")
+# test run last: user.vscode("testing.reRunLastRun")
 
-test debug: user.vscode("testing.debugAtCursor")
-test debug file: user.vscode("testing.debugCurrentFile")
-test debug all: user.vscode("testing.debugAll")
-test debug failed: user.vscode("testing.debugFailTests")
-test debug last: user.vscode("testing.debugLastRun")
+# test debug: user.vscode("testing.debugAtCursor")
+# test debug file: user.vscode("testing.debugCurrentFile")
+# test debug all: user.vscode("testing.debugAll")
+# test debug failed: user.vscode("testing.debugFailTests")
+# test debug last: user.vscode("testing.debugLastRun")
 
-test cancel: user.vscode("testing.cancelRun")
+# test cancel: user.vscode("testing.cancelRun")
 
 # Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
