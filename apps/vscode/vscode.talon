@@ -57,9 +57,9 @@ show shortcuts: user.vscode("workbench.action.openGlobalKeybindings")
 show shortcuts json: user.vscode("workbench.action.openGlobalKeybindingsFile")
 show snippets: user.vscode("workbench.action.openSnippets")
 
-# VSCode Snippets
-snip (last | previous): user.vscode("jumpToPrevSnippetPlaceholder")
-snip next: user.vscode("jumpToNextSnippetPlaceholder")
+# # VSCode Snippets
+# snip (last | previous): user.vscode("jumpToPrevSnippetPlaceholder")
+# snip next: user.vscode("jumpToNextSnippetPlaceholder")
 
 # Display
 centered switch: user.vscode("workbench.action.toggleCenteredLayout")
@@ -70,11 +70,11 @@ zen switch: user.vscode("workbench.action.toggleZenMode")
 light switch: user.vscode("workbench.action.toggleLightDarkThemes")
 
 # File Commands
-file (hunt | rummage | recon) [<user.text>]:
+file recon [<user.text>]:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     insert(text or "")
-file (hunt | rummage | recon) (pace | paste):
+file recon (pace | paste):
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     edit.paste()
@@ -167,47 +167,47 @@ fold five: user.vscode("editor.foldLevel5")
 fold six: user.vscode("editor.foldLevel6")
 fold seven: user.vscode("editor.foldLevel7")
 
-# Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
-git branch: user.vscode("git.branchFrom")
-git branch this: user.vscode("git.branch")
-git checkout [<user.text>]:
-    user.vscode("git.checkout")
-    sleep(50ms)
-    insert(text or "")
-git commit [<user.text>]:
-    user.vscode("git.commitStaged")
-    sleep(100ms)
-    user.insert_formatted(text or "", "CAPITALIZE_FIRST_WORD")
-git commit undo: user.vscode("git.undoCommit")
-git commit amend: user.vscode("git.commitStagedAmend")
-git diff: user.vscode("git.openChange")
-git fetch: user.vscode("git.fetch")
-git fetch all: user.vscode("git.fetchAll")
-git ignore: user.vscode("git.ignore")
-git merge: user.vscode("git.merge")
-git output: user.vscode("git.showOutput")
-git pull: user.vscode("git.pullRebase")
-git push: user.vscode("git.push")
-git push force: user.vscode("git.pushForce")
-git rebase abort: user.vscode("git.rebaseAbort")
-git reveal: user.vscode("git.revealInExplorer")
-git revert: user.vscode("git.revertChange")
-git stash: user.vscode("git.stash")
-git stash pop: user.vscode("git.stashPop")
-git status: user.vscode("workbench.scm.focus")
-git stage: user.vscode("git.stage")
-git stage all: user.vscode("git.stageAll")
-git sync: user.vscode("git.sync")
-git unstage: user.vscode("git.unstage")
-git unstage all: user.vscode("git.unstageAll")
-pull request: user.vscode("pr.create")
-# Use keyboard shortcuts because VSCode relies on when clause contexts to choose the appropriate
-# action: https://code.visualstudio.com/api/references/when-clause-contexts
-# change next: key(alt-f5)
-# change last: key(shift-alt-f5)
+# # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
+# git branch: user.vscode("git.branchFrom")
+# git branch this: user.vscode("git.branch")
+# git checkout [<user.text>]:
+#     user.vscode("git.checkout")
+#     sleep(50ms)
+#     insert(text or "")
+# git commit [<user.text>]:
+#     user.vscode("git.commitStaged")
+#     sleep(100ms)
+#     user.insert_formatted(text or "", "CAPITALIZE_FIRST_WORD")
+# git commit undo: user.vscode("git.undoCommit")
+# git commit amend: user.vscode("git.commitStagedAmend")
+# git diff: user.vscode("git.openChange")
+# git fetch: user.vscode("git.fetch")
+# git fetch all: user.vscode("git.fetchAll")
+# git ignore: user.vscode("git.ignore")
+# git merge: user.vscode("git.merge")
+# git output: user.vscode("git.showOutput")
+# git pull: user.vscode("git.pullRebase")
+# git push: user.vscode("git.push")
+# git push force: user.vscode("git.pushForce")
+# git rebase abort: user.vscode("git.rebaseAbort")
+# git reveal: user.vscode("git.revealInExplorer")
+# git revert: user.vscode("git.revertChange")
+# git stash: user.vscode("git.stash")
+# git stash pop: user.vscode("git.stashPop")
+# git status: user.vscode("workbench.scm.focus")
+# git stage: user.vscode("git.stage")
+# git stage all: user.vscode("git.stageAll")
+# git sync: user.vscode("git.sync")
+# git unstage: user.vscode("git.unstage")
+# git unstage all: user.vscode("git.unstageAll")
+# pull request: user.vscode("pr.create")
+# # Use keyboard shortcuts because VSCode relies on when clause contexts to choose the appropriate
+# # action: https://code.visualstudio.com/api/references/when-clause-contexts
+# # change next: key(alt-f5)
+# # change last: key(shift-alt-f5)
 
-# Testing
-# keys: user.vscode("testing.runAtCursor")
+# # Testing
+# test run: user.vscode("testing.runAtCursor")
 # test run file: user.vscode("testing.runCurrentFile")
 # test run all: user.vscode("testing.runAll")
 # test run failed: user.vscode("testing.reRunFailTests")
@@ -247,10 +247,6 @@ terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
 terminal scroll down: user.vscode("workbench.action.terminal.scrollDown")
 terminal <number_small>: user.vscode_terminal(number_small)
 
-#TODO: should this be added to linecommands?
-copy line down: user.vscode("editor.action.copyLinesDownAction")
-copy line up: user.vscode("editor.action.copyLinesUpAction")
-
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more | this): user.vscode("editor.action.smartSelect.expand")
@@ -269,7 +265,7 @@ replace here:
 
 hover show: user.vscode("editor.action.showHover")
 
-join lines: user.vscode("editor.action.joinLines")
+# join lines: user.vscode("editor.action.joinLines")
 
 full screen: user.vscode("workbench.action.toggleFullScreen")
 
