@@ -226,7 +226,7 @@ simple_keys = [
     "insert",
     "pagedown",
     "pageup",
-    "space",
+    # "space",
     "tab",
 ]
 
