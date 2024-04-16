@@ -20,12 +20,17 @@ alphabet_list = get_list_from_csv(
     "alphabet.csv", ("Letter", "Spoken Form"), setup_default_alphabet()
 )
 
+deprecated_alphabet_list = get_list_from_csv(
+    "deprecated_alphabet.csv", ("Letter", "Spoken Form")
+)
+
 # used for number keys & function keys respectively
 digits = "zero unit two three four five six seven tate niner".split()
 f_digits = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split()
 
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
+mod.list("deprecated_letter", desc="Deprecated letters")
 mod.list("symbol_key", desc="All symbols from the keyboard")
 mod.list("arrow_key", desc="All arrow keys")
 mod.list("number_key", desc="All number keys")
@@ -60,10 +65,17 @@ def number_key(m) -> str:
     return m.number_key
 
 
-@mod.capture(rule="{self.letter}")
+@mod.capture(rule="({self.deprecated_letter})")
+def deprecated_letter(m) -> str:
+    "One deprecated letter key"
+    actions.user.notify_deprecated()
+    return str(m)
+
+
+@mod.capture(rule="({self.letter} | <self.deprecated_letter>)")
 def letter(m) -> str:
     "One letter key"
-    return m.letter
+    return str(m)
 
 
 @mod.capture(rule="{self.special_key}")
@@ -134,6 +146,7 @@ if app.platform == "mac":
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
 ctx.lists["self.letter"] = alphabet_list
+ctx.lists["self.deprecated_letter"] = deprecated_alphabet_list
 
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.

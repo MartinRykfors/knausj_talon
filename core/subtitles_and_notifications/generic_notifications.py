@@ -34,6 +34,10 @@ class GenericNotificationActions:
         """Notify Talon asleep"""
         flash_square("#00ffff")
 
+    def notify_deprecated():
+        """Notify usage of deprecated function"""
+        flash_square("#ffa000")
+
 
 def flash_square(color: str):
     for screen in ui.screens():
