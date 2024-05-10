@@ -7,8 +7,4 @@
 # for key combos consisting only of modifiers, eg. `press super`.
 press <user.modifiers>: key(modifiers)
 # for consistency with dictation mode and explicit arrow keys if you need them.
-press <user.keys>: key(keys)
-
-kick:
-    app.notify('kick is deprecated, use stomp')
-    key(enter)
+# press <user.keys>: key(keys)

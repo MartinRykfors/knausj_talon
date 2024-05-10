@@ -26,6 +26,9 @@ class Actions:
     def notify_wake():
         """Notify Talon awake"""
 
+    def notify_deprecated():
+        """Notify usage of deprecated function"""
+
 
 def on_pre_phrase(phrase):
     words = phrase.get("phrase")
