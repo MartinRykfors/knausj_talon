@@ -2,7 +2,16 @@
 os: linux
 tag: user.i3wm
 -
-^try [work] <number_small>: user.i3wm_switch_to_workspace(number_small)
+^try (one | unit): user.i3wm_switch_to_workspace(1)
+^try two: user.i3wm_switch_to_workspace(2)
+^try three: user.i3wm_switch_to_workspace(3)
+^try four: user.i3wm_switch_to_workspace(4)
+^try (five | fiver): user.i3wm_switch_to_workspace(5)
+^try six: user.i3wm_switch_to_workspace(6)
+^try seven: user.i3wm_switch_to_workspace(7)
+^try (eight | tate): user.i3wm_switch_to_workspace(8)
+^try (nine | niner): user.i3wm_switch_to_workspace(9)
+
 ^try flip: user.i3wm_switch_to_workspace("back_and_forth")
 ^try work star: user.i3wm_switch_to_workspace("next")
 ^try work port: user.i3wm_switch_to_workspace("prev")
