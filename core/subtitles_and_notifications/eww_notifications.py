@@ -84,10 +84,6 @@ class PolybarNotificationActions:
 
     def notify_deprecated():
         """Notify usage of deprecated function"""
-        flash_square("#ffa000")
-
-    def notify_deprecated():
-        """Notify usage of deprecated function"""
         global clear_warn
 
         if clear_warn:
