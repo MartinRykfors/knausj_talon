@@ -6,7 +6,7 @@ place call, callAsFunction
 excise, cutToClipboard
 center, scrollToCenter
 change, clearAndSetSelection
-chuck, remove
+chuck|clear, remove
 clone, insertCopyAfter
 clone up, insertCopyBefore
 comment, toggleLineComment
