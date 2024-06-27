@@ -5,7 +5,7 @@ tag: user.code_operators_math
 (operator | operate) minus: user.code_operator_subtraction()
 (operator | operate) plus: user.code_operator_addition()
 (operator | operate) times: user.code_operator_multiplication()
-(operator | operate) divide: user.code_operator_division()
+(operator | operate) (divide | division): user.code_operator_division()
 (operator | operate) mod: user.code_operator_modulo()
 ((operator | operate) (power | exponent) | to the power [of]): user.code_operator_exponent()
 
