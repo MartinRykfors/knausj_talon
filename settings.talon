@@ -17,7 +17,10 @@ settings():
     # Set the max number of contexts display per page in help
     user.help_max_contexts_per_page = 20
 
-    # The default amount used when scrolling continuously
+    # Uncomment to always sort help contexts alphabetically.
+    # user.help_sort_contexts_by_specificity = false
+
+    # Set the scroll amount for continuous scroll/gaze scroll
     user.mouse_continuous_scroll_amount = 80
 
     # Stop continuous scroll/gaze scroll with a pop
