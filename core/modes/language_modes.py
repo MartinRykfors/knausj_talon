@@ -10,6 +10,7 @@ language_extensions = {
     "c": "c h",
     # 'cmake': 'cmake',
     # 'cplusplus': 'cpp hpp',
+    "clojure": "clj",
     "csharp": "cs",
     "css": "css",
     # 'elisp': 'el',

@@ -1,0 +1,13 @@
+Spoken form, VSCode command
+-shove, paredit.slurpSexpForward
+-judo, paredit.barfSexpBackward
+-grapple, paredit.barfSexpForward
+-elbow, paredit.slurpSexpBackward
+-embrace, paredit.wrapAroundParens
+-splice, paredit.spliceSexp
+-crush, paredit.joinSexp
+-axe kick, paredit.splitSexp
+-swizzle, paredit.transpose
+-body slam, paredit.raiseSexp
+
+-suplex, paredit.spliceSexpKillBackward

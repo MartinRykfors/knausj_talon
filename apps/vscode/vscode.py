@@ -367,3 +367,14 @@ class UserActions:
 
     def insert_snippet(body: str):
         actions.user.run_rpc_command("editor.action.insertSnippet", {"snippet": body})
+
+
+@ctx.action_class("user")
+class PareditActions:
+    def splice_sexp_kill_forward():
+        """Splice sexp, killing forward"""
+        actions.user.vscode("paredit.spliceSexpKillForward")
+
+    def splice_sexp_kill_backward():
+        """Splice sexp, killing backward"""
+        actions.user.vscode("paredit.spliceSexpKillBackward")
