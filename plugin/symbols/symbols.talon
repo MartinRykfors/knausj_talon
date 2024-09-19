@@ -1,4 +1,4 @@
-spamma: ", "
+(spamma | coid): ", "
 general: ": "
 pipeline: " | "
 arrow: " -> "
