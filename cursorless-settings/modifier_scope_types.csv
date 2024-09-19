@@ -17,7 +17,7 @@ cara, character
 class, class
 class name, className
 comment, comment
-condition, condition
+predicate, condition
 element, xmlElement
 end tag, xmlEndTag
 -environment, environment
