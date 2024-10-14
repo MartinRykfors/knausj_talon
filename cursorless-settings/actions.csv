@@ -6,7 +6,7 @@ place call, callAsFunction
 excise, cutToClipboard
 center, scrollToCenter
 change, clearAndSetSelection
-chuck|clear, remove
+chuck, remove
 clone, insertCopyAfter
 clone up, insertCopyBefore
 comment, toggleLineComment
@@ -26,7 +26,7 @@ highlight, highlight
 hover, showHover
 indent, indentLine
 inspect, showDebugHover
-move, moveToTarget
+transfer, moveToTarget
 paste, pasteFromClipboard
 telephone, nextHomophone
 post, setSelectionAfter
@@ -41,7 +41,7 @@ reverse, reverseTargets
 scout, findInDocument
 scout all, findInWorkspace
 shuffle, randomizeTargets
-snippet, insertSnippet
+snippet | fabricate, insertSnippet
 snippet make, generateSnippet
 -arrange, sortTargets
 swap, swapTargets
