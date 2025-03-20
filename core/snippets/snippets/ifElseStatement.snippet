@@ -1,0 +1,26 @@
+name: ifElseStatement
+phrase: if else
+insertionScope: statement
+
+$alternative.wrapperPhrase: else
+$alternative.wrapperScope: statement
+$consequence.wrapperPhrase: if else
+$consequence.wrapperScope: statement
+---
+
+language: typescript | typescriptreact | javascript | javascriptreact | cpp | c | java | csharp | php
+-
+if ($condition) {
+    $consequence
+} else {
+    $alternative
+}
+---
+
+language: python
+-
+if $condition:
+    $consequence
+else:
+    $alternative
+---

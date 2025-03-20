@@ -1,0 +1,12 @@
+name: ifInlineStatement
+phrase: if inline
+insertionScope: statement
+
+$val1.wrapperPhrase: if inline
+$val1.wrapperScope: value
+---
+
+language: python
+-
+$val1 if $condition else $0
+---

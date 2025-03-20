@@ -1,0 +1,12 @@
+name: testCase
+phrase: test case
+insertionScope: namedFunction | statement | line
+
+$name.insertionFormatter: SNAKE_CASE
+---
+
+language: python
+-
+def test_$name(self):
+    $body
+---
