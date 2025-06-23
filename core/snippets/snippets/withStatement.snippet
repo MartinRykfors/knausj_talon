@@ -1,13 +1,13 @@
-name: forEach
-phrase: for each
+name: withStatement
+phrase: with
 insertionScope: statement
 
-$0.wrapperPhrase: for each
+$0.wrapperPhrase: with
 $0.wrapperScope: statement
 ---
 
 language: python
 -
-for $1 in $2:
+with $1:
     $0
 ---
