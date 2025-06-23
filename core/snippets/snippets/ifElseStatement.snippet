@@ -2,25 +2,70 @@ name: ifElseStatement
 phrase: if else
 insertionScope: statement
 
-$alternative.wrapperPhrase: else
-$alternative.wrapperScope: statement
-$consequence.wrapperPhrase: if else
-$consequence.wrapperScope: statement
+$1.wrapperPhrase: if else cond
+$1.wrapperScope: statement
+$2.wrapperPhrase: if else
+$2.wrapperScope: statement
 ---
 
-language: typescript | typescriptreact | javascript | javascriptreact | cpp | c | java | csharp | php
+language: c | cpp | csharp | java | javascript | typescript | javascriptreact | typescriptreact | php | scala | kotlin | r
 -
-if ($condition) {
-    $consequence
+if ($1) {
+    $2
 } else {
-    $alternative
+    $0
 }
 ---
 
 language: python
 -
-if $condition:
-    $consequence
+if $1:
+    $2
 else:
-    $alternative
+    $0
+---
+
+language: lua
+-
+if $1 then
+    $2
+else
+    $0
+end
+---
+
+language: ruby
+-
+if $1
+    $2
+else
+    $0
+end
+---
+
+language: vimscript
+-
+if $1
+    $2
+else
+    $0
+endif
+---
+
+language: rust | stata | go
+-
+if $1 {
+    $2
+} else {
+    $0
+}
+---
+
+language: elixir
+-
+if $1 do
+    $2
+else
+    $0
+end
 ---

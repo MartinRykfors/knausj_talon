@@ -1,9 +1,25 @@
 import re
 from dataclasses import dataclass
 
-from talon import actions
+from talon import Module, actions, settings
 
-INDENTATION = "    "
+mod = Module()
+
+
+mod.setting(
+    "snippet_raw_text_spaces_per_tab",
+    type=int,
+    default=4,
+    desc="""The number of spaces per tab when inserting snippets as raw text. Set to -1 to insert tabs as tabs, such as in code editors that can expand tabs in pasted or typed text. This setting is provided for applications like web browsers and chat apps.""",
+)
+
+mod.setting(
+    "snippet_raw_text_paste",
+    type=bool,
+    default=False,
+    desc="""If true, inserting snippets as raw text will always be done through pasting""",
+)
+
 RE_STOP = re.compile(r"\$(\d+|\w+)|\$\{(\d+|\w+)\}|\$\{(\d+|\w+):(.+)\}")
 
 
@@ -11,6 +27,7 @@ RE_STOP = re.compile(r"\$(\d+|\w+)|\$\{(\d+|\w+)\}|\$\{(\d+|\w+):(.+)\}")
 class Stop:
     name: str
     rows_up: int
+    columns_left: int
     row: int
     col: int
 
@@ -19,17 +36,28 @@ def insert_snippet_raw_text(body: str):
     """Insert snippet as raw text without editor support"""
     updated_snippet, stop = parse_snippet(body)
 
-    actions.insert(updated_snippet)
+    if settings.get("user.snippet_raw_text_paste"):
+        actions.user.paste(updated_snippet)
+    else:
+        actions.insert(updated_snippet)
 
     if stop:
         up(stop.rows_up)
-        actions.edit.line_start()
-        right(stop.col)
+        actions.edit.line_end()
+        left(stop.columns_left)
+
+
+def format_tabs(text: str) -> str:
+    """Possibly replaces tabs with spaces in the given text."""
+    spaces_per_tab: int = settings.get("user.snippet_raw_text_spaces_per_tab")
+    if spaces_per_tab < 0:
+        return text
+    return re.sub(r"\t", " " * spaces_per_tab, text)
 
 
 def parse_snippet(body: str):
     # Some IM services will send the message on a tab
-    body = re.sub(r"\t", INDENTATION, body)
+    body = format_tabs(body)
 
     # Replace variable with appropriate value/text
     body = re.sub(r"\$TM_SELECTED_TEXT", lambda _: actions.edit.selected_text(), body)
@@ -46,6 +74,7 @@ def parse_snippet(body: str):
                 Stop(
                     name=match.group(1) or match.group(2) or match.group(3),
                     rows_up=len(lines) - i - 1,
+                    columns_left=0,
                     row=i,
                     col=match.start(),
                 )
@@ -62,6 +91,10 @@ def parse_snippet(body: str):
         # Update existing line
         lines[i] = line
 
+    # Can't calculate column left until line text is fully updated
+    for stop in stops:
+        stop.columns_left = len(lines[stop.row]) - stop.col
+
     updated_snippet = "\n".join(lines)
 
     return updated_snippet, get_first_stop(stops)
@@ -73,10 +106,10 @@ def up(n: int):
         actions.edit.up()
 
 
-def right(n: int):
-    """Move cursor right <n> columns"""
+def left(n: int):
+    """Move cursor left <n> columns"""
     for _ in range(n):
-        actions.edit.right()
+        actions.edit.left()
 
 
 def key(stop: Stop):
@@ -91,4 +124,7 @@ def get_first_stop(stops: list[Stop]):
     if not stops:
         return None
     stops.sort(key=key)
-    return stops[0]
+    stop = stops[0]
+    if stop.rows_up == 0 and stop.columns_left == 0:
+        return None
+    return stop
