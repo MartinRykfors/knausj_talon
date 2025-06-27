@@ -1,5 +1,5 @@
 from talon import Context, Module, actions, imgui, ui
-from ...core.user_settings import get_list_from_csv
+from ...core.user_settings import track_csv_list
 
 mod = Module()
 mod.tag("datum_list_open", "tag for showing the datum list gui")
@@ -8,14 +8,19 @@ ctx = Context()
 mod.list("datum", desc="List with common info to insert")
 mod.list("datum_local", desc="List with local info to insert (not source controlled)")
 
-ctx.lists["self.datum"] = get_list_from_csv(
-    "datum.csv", headers=("datum", "spoken"), default={}
+@track_csv_list(
+    "datum.csv",
+    headers=("datum", "spoken"),
 )
+def on_update_datum(values):
+    ctx.lists["self.datum"] = values
 
-ctx.lists["self.datum_local"] = get_list_from_csv(
-    "datum.local.csv", headers=("datum", "spoken"), default={}
+@track_csv_list(
+    "datum.local.csv",
+    headers=("datum", "spoken"),
 )
-
+def on_update_datum_local(values):
+    ctx.lists["self.datum_local"] = values
 
 @mod.capture(rule="( {user.datum} | {user.datum_local})")
 def any_datum(m) -> str:
@@ -25,13 +30,13 @@ def any_datum(m) -> str:
 
 @imgui.open(y=ui.main_screen().y)
 def gui(gui: imgui.GUI):
-    gui.text('Global')
+    gui.text("Global")
     gui.line()
     for key in sorted(ctx.lists["self.datum"].keys()):
         gui.text(key)
     gui.spacer()
 
-    gui.text('Local')
+    gui.text("Local")
     gui.line()
     for key in sorted(ctx.lists["self.datum_local"].keys()):
         gui.text(key)
