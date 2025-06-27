@@ -7,7 +7,7 @@ tag: user.generic_unix_shell
 """
 
 # Uncomment the following line to enable common unix utilities from unix_utilities.py
-ctx.tags = ["user.unix_utilities"]
+# ctx.tags = ["user.unix_utilities"]
 
 
 @ctx.action_class("user")
@@ -16,12 +16,12 @@ class Actions:
 
     def terminal_list_directories():
         """Lists directories"""
-        actions.insert("ll")
+        actions.insert("ls")
         actions.key("enter")
 
     def terminal_list_all_directories():
         """Lists all directories including hidden"""
-        actions.insert("ll -a")
+        actions.insert("ls -a")
         actions.key("enter")
 
     def terminal_change_directory(path: str):
@@ -52,8 +52,5 @@ class Actions:
     def terminal_kill_all():
         """kills the running command"""
         actions.key("ctrl-c")
-
-    def terminal_history():
-        """Shows the command history"""
-        actions.insert("history")
+        actions.insert("y")
         actions.key("enter")
