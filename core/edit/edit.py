@@ -87,6 +87,15 @@ class Actions:
             # sleep here so that clip.revert doesn't revert the clipboard too soon
             actions.sleep("150ms")
 
+    def delete_right():
+        """Delete character to the right"""
+        actions.key("delete")
+
+    def delete_all():
+        """Delete all text in the current document"""
+        actions.edit.select_all()
+        actions.edit.delete()
+
     def words_left(n: int):
         """Moves left by n words."""
         for _ in range(n):
@@ -107,11 +116,6 @@ class Actions:
         actions.edit.extend_word_right()
         actions.edit.cut()
 
-    def cut_line():
-        """Cuts the current line."""
-        actions.edit.select_line()
-        actions.edit.cut()
-
     def copy_word_left():
         """Copies the word to the left."""
         actions.edit.extend_word_left()
@@ -121,3 +125,29 @@ class Actions:
         """Copies the word to the right."""
         actions.edit.extend_word_right()
         actions.edit.copy()
+
+    # ----- Start / End of line -----
+    def select_line_start():
+        """Select to start of current line"""
+        if actions.edit.selected_text():
+            actions.edit.left()
+        actions.edit.extend_line_start()
+
+    def select_line_end():
+        """Select to end of current line"""
+        if actions.edit.selected_text():
+            actions.edit.right()
+        actions.edit.extend_line_end()
+
+    def line_middle():
+        """Go to the middle of the line"""
+        actions.edit.select_line()
+        half_line_length = int(len(actions.edit.selected_text()) / 2)
+        actions.edit.left()
+        for i in range(0, half_line_length):
+            actions.edit.right()
+
+    def cut_line():
+        """Cut current line"""
+        actions.edit.select_line()
+        actions.edit.cut()

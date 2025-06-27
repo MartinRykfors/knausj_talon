@@ -1,44 +1,28 @@
 from talon import Context, Module, actions, app
 
-from ..user_settings import get_list_from_csv
-
-
-def setup_default_alphabet():
-    """set up common default alphabet.
-
-    no need to modify this here, change your alphabet using alphabet.csv"""
-    initial_default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split()
-    initial_letters_string = "abcdefghijklmnopqrstuvwxyz"
-    initial_default_alphabet_dict = dict(
-        zip(initial_default_alphabet, initial_letters_string)
-    )
-
-    return initial_default_alphabet_dict
-
-
-alphabet_list = get_list_from_csv(
-    "alphabet.csv", ("Letter", "Spoken Form"), setup_default_alphabet()
+from .symbols import (
+    dragon_punctuation_dict,
+    punctuation_dict,
+    symbol_key_dict,
 )
-
-deprecated_alphabet_list = get_list_from_csv(
-    "deprecated_alphabet.csv", ("Letter", "Spoken Form")
-)
-
-# used for number keys & function keys respectively
-digits = "zero unit two three four five six seven tate niner".split()
-f_digits = "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty".split()
 
 mod = Module()
+ctx = Context()
+
+ctx_dragon = Context()
+ctx_dragon.matches = r"""
+speech.engine: dragon
+"""
+
 mod.list("letter", desc="The spoken phonetic alphabet")
-mod.list("deprecated_letter", desc="Deprecated letters")
 mod.list("symbol_key", desc="All symbols from the keyboard")
 mod.list("arrow_key", desc="All arrow keys")
 mod.list("number_key", desc="All number keys")
 mod.list("modifier_key", desc="All modifier keys")
 mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
+mod.list("keypad_key", desc="All keypad keys")
 mod.list("punctuation", desc="words for inserting punctuation into text")
-mod.tag("no_letters", desc="Tag for disabling letter input")
 
 
 @mod.capture(rule="{self.modifier_key}+")
@@ -65,17 +49,16 @@ def number_key(m) -> str:
     return m.number_key
 
 
-@mod.capture(rule="({self.deprecated_letter})")
-def deprecated_letter(m) -> str:
-    "One deprecated letter key"
-    actions.user.notify_deprecated()
-    return str(m)
+@mod.capture(rule="{self.keypad_key}")
+def keypad_key(m) -> str:
+    "One keypad key"
+    return m.keypad_key
 
 
-@mod.capture(rule="({self.letter} | <self.deprecated_letter>)")
+@mod.capture(rule="{self.letter}")
 def letter(m) -> str:
     "One letter key"
-    return str(m)
+    return m.letter
 
 
 @mod.capture(rule="{self.special_key}")
@@ -104,7 +87,7 @@ def any_alphanumeric_key(m) -> str:
 
 @mod.capture(
     rule="( <self.letter> | <self.number_key> | <self.symbol_key> "
-    "| <self.arrow_key> | <self.function_key> | <self.special_key> )"
+    "| <self.arrow_key> | <self.function_key> | <self.special_key> | <self.keypad_key>)"
 )
 def unmodified_key(m) -> str:
     "A single key with no modifiers"
@@ -133,146 +116,13 @@ def letters(m) -> str:
     return "".join(m.letter_list)
 
 
-ctx = Context()
-modifier_keys = {
-    # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alter": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
-    "super": "super",
-}
-if app.platform == "mac":
-    modifier_keys["command"] = "cmd"
-    modifier_keys["option"] = "alt"
-ctx.lists["self.modifier_key"] = modifier_keys
-ctx.lists["self.letter"] = alphabet_list
-ctx.lists["self.deprecated_letter"] = deprecated_alphabet_list
-
-# `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
-# `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
-punctuation_words = {
-    # TODO: I'm not sure why we need these, I think it has something to do with
-    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
-    "`": "`",
-    ",": ",",  # <== these things
-    "back tick": "`",
-    "comma": ",",
-    # Workaround for issue with conformer b-series; see #946
-    "coma": ",",
-    "period": ".",
-    "full stop": ".",
-    "semicolon": ";",
-    "semlon": ";",
-    "colonel": ":",
-    "forward slash": "/",
-    "question mark": "?",
-    "exclamation mark": "!",
-    "exclamation point": "!",
-    "asterisk": "*",
-    "hash sign": "#",
-    "number sign": "#",
-    "percent sign": "%",
-    "at sign": "@",
-    "and sign": "&",
-    "ampersand": "&",
-    # Currencies
-    "dollar sign": "$",
-    "pound sign": "£",
-    "hyphen": "-",
-    "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
-    "right paren": ")",
-}
-symbol_key_words = {
-    "punk": ".",
-    "single": "'",
-    "double": '"',
-    "question": "?",
-    "square": "[",
-    "right square": "]",
-    "slash": "/",
-    "backslash": "\\",
-    "minus": "-",
-    "dash": "-",
-    "equals": "=",
-    "plus": "+",
-    "grave": "`",
-    "tilde": "~",
-    "bang": "!",
-    "underscore": "_",
-    "rug": "_",
-    "bouba": "(",
-    "right bouba": ")",
-    "kiki": "{",
-    "right kiki": "}",
-    "angle": "<",
-    "rangle": ">",
-    "astro": "*",
-    "hash": "#",
-    "percent": "%",
-    "carriage": "^",
-    "amper": "&",
-    "pipe": "|",
-    # Currencies
-    "dollar": "$",
-    # "pound": "£",
-}
-
-# make punctuation words also included in {user.symbol_keys}
-symbol_key_words.update(punctuation_words)
-ctx.lists["self.punctuation"] = punctuation_words
-ctx.lists["self.symbol_key"] = symbol_key_words
-ctx.lists["self.number_key"] = {name: str(i) for i, name in enumerate(digits)}
-ctx.lists["self.arrow_key"] = {
-    "sink": "down",
-    "port": "left",
-    "star": "right",
-    "climb": "up",
-}
-
-simple_keys = [
-    # "end",
-    # "enter",
-    # "escape",
-    # "home",
-    "insert",
-    "pagedown",
-    "pageup",
-    # "space",
-    "tab",
-]
-
-alternate_keys = {
-    "trash": "backspace",
-    "delete": "delete",
-    "page up": "pageup",
-    "page down": "pagedown",
-    "stomp": "enter",
-    "strike": "escape",
-    "push": "end",
-    "whip": "home",
-    "void": "space",
-}
-# mac apparently doesn't have the menu key.
-if app.platform in ("windows", "linux"):
-    alternate_keys["menu key"] = "menu"
-    alternate_keys["print screen"] = "printscr"
-
-special_keys = {k: k for k in simple_keys}
-special_keys.update(alternate_keys)
-ctx.lists["self.special_key"] = special_keys
-ctx.lists["self.function_key"] = {
-    f"function {name}": f"f{i}" for i, name in enumerate(f_digits, start=1)
-}
-
-
 @mod.action_class
 class Actions:
-    def move_cursor(s: str):
-        """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
-        for d in s.split():
-            if d in ("left", "right", "up", "down"):
-                getattr(actions.edit, d)()
-            else:
-                raise RuntimeError(f"invalid arrow key: {d}")
+    def get_punctuation_words():
+        """Gets the user.punctuation list"""
+        return punctuation_dict
+
+
+ctx.lists["user.punctuation"] = punctuation_dict
+ctx.lists["user.symbol_key"] = symbol_key_dict
+ctx_dragon.lists["user.punctuation"] = dragon_punctuation_dict
