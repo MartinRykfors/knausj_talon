@@ -3,17 +3,17 @@ os: windows
 os: linux
 -
 
-end: end
-home: home
+push: end
+whip: home
 minus: minus
-enter: enter
+stomp: enter
 page down: pagedown
 page up: pageup
-escape: escape
-space: space
+strike: escape
+void: space
 tab: tab
 insert: insert
-wipe: backspace
+trash: backspace
 delete: backspace
 forward delete: delete
 menu key: menu
