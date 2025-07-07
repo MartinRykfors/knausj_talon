@@ -66,7 +66,7 @@ state trait: "trait "
 state match: user.code_state_switch()
 state (some | sum): "Some"
 state static: "static "
-self taught: "self."
+self punk: "self."
 state use: user.code_import()
 
 use <user.code_libraries>:
