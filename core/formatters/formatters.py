@@ -242,6 +242,7 @@ formatter_list = [
     CodeFormatter("SLASH_SEPARATED", "/", lower, lower),
     CodeFormatter("ALL_SLASHES", "/", lambda text: f"/{text.lower()}", lower),
     CodeFormatter("DOUBLE_UNDERSCORE", "__", lower, lower),
+    CodeFormatter("DOUBLE_UNDERSCORE_SURROUNDED_STRING", "", lambda text: f"__{text.lower()}__", lambda text: f"{text.lower()}__"),
     CodeFormatter("DOUBLE_COLON_SEPARATED", "::", lower, lower),
 ]
 
