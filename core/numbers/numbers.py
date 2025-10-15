@@ -6,7 +6,7 @@ from talon import Context, Module
 mod = Module()
 ctx = Context()
 
-digit_list = "zero one two three four five six seven eight nine".split()
+digit_list = "zero unit two three four fiver six seven tate niner".split()
 teens = "ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
 tens = "twenty thirty forty fifty sixty seventy eighty ninety".split()
 scales = "hundred thousand million billion trillion quadrillion quintillion sextillion septillion octillion nonillion decillion".split()
