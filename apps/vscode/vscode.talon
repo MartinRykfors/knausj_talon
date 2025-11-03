@@ -297,11 +297,11 @@ cursor less switch: user.vscode("cursorless.toggleDecorations")
 run last terminal:
     edit.save_all()
     sleep(800ms)
-    user.switcher_focus("alacritty")
+    user.switcher_focus("Alacritty")
     sleep(600ms)
     user.terminal_run_last()
     sleep(100ms)
-    user.switcher_focus("Code")
+    user.switcher_focus("code-oss")
 
 find case switch: key(alt-c)
 
