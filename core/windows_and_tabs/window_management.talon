@@ -21,3 +21,8 @@ snap <user.running_applications> <user.window_snap_position>:
 
 snap <user.running_applications> [screen] <number>:
     user.move_app_to_screen(running_applications, number)
+
+inferno: user.switcher_focus("firefox")
+editor: user.switcher_focus("Emacs")
+studio: user.switcher_focus("code-oss")
+alacrity: user.switcher_focus("Alacritty")
