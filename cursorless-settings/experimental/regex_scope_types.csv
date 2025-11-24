@@ -1,1 +1,2 @@
 Spoken form, Regex
+raver,"%[\w_]+%"
