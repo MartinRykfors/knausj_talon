@@ -14,7 +14,7 @@ void: space
 tab: tab
 insert: insert
 trash: backspace
-delete: backspace
+delete: delete
 forward delete: delete
 menu key: menu
 print screen: printscr
