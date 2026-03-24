@@ -3,5 +3,5 @@ parrot(cluck):
 	user.flash_repeat()
 
 parrot(tut):
-	user.cancel_in_flight_phrase()
 	user.flash_cancel()
+	user.cancel_in_flight_phrase()
