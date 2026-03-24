@@ -144,7 +144,7 @@ class WinActions:
         if "." in result:
             return result
 
-        return ""
+        return "rave.crc"
 
 
 @mod.action_class

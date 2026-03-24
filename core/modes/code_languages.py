@@ -63,6 +63,7 @@ code_languages = [
     Language("json", "json", ["json"]),
     Language("shellscript", "shell script", ["sh"]),
     Language("xml", "xml", ["xml"]),
+    Language("rave", "rave", ["crc"]),
 ]
 
 # Files without specific extensions but are associated with languages
